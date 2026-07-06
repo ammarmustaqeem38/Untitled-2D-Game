@@ -1,22 +1,15 @@
 using Godot;
 
-public partial class BalconyIdle : Area2D
+public partial class BalconyIdle : Node2D
 {
 	public override void _Ready()
 	{
-		BodyEntered += OnBodyEntered;
-	}
-	
-		private void ChangeRoom()
-	{
-		GetTree().ChangeSceneToFile("res://BalconyIdle.tscn");
-	}
+		var player = GetNode<CharacterBody2D>("/root/Player");
+		var spawn = GetNode<Marker2D>("Spawn");
 
-	private void OnBodyEntered(Node2D body)
-	{
-		if (body.Name == "Player")
-		{
-		   CallDeferred(nameof(ChangeRoom));
-		}
+		player.GlobalPosition = spawn.GlobalPosition;
+		
+		var audioPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+		audioPlayer.Play();
 	}
 }

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://wdb2he8wuwt1" path="res://Spritos/this-bed-icon-pixel-art-260nw-2310043811-removebg-preview.png" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://dkuomic11lrfl" path="res://Spritos/BedroomDoor.png" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://ch0ecbqgkapgd" path="res://ExitDoor2.cs" id="7_5vw27"]
-[ext_resource type="Script" uid="uid://cbgs18j0mweu7" path="res://BalconyIdle.cs" id="7_272bh"]
+[ext_resource type="Script" uid="uid://cbgs18j0mweu7" path="res://GoToBalcony.cs" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://2vm1ry8tve8i" path="res://Spritos/BthroomDoorIso.png" id="8_kek77"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]

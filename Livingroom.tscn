@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://wdb2he8wuwt1" path="res://Spritos/this-bed-icon-pixel-art-260nw-2310043811-removebg-preview.png" id="1_cwb03"]
 [ext_resource type="Texture2D" uid="uid://dkuomic11lrfl" path="res://Spritos/BedroomDoor.png" id="3_c7nfr"]
 [ext_resource type="Script" uid="uid://djcvqh75ockbr" path="res://BedDoor.cs" id="3_vcakb"]
+[ext_resource type="AudioStream" uid="uid://bl3hixvhi7ep3" path="res://Audio/AshfaqMusic.mp3" id="5_pgvyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrwbp"]
 size = Vector2(40, 69)
@@ -33,3 +34,12 @@ texture = ExtResource("3_c7nfr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BedDoor" unique_id=1405584609]
 position = Vector2(191, 610.5)
 shape = SubResource("RectangleShape2D_jrwbp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=54148648]
+position = Vector2(919, 170)
+stream = ExtResource("5_pgvyl")
+max_distance = 4096.0
+
+[node name="Ashfaq" type="StaticBody2D" parent="." unique_id=898305477]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Ashfaq" unique_id=451118164]
