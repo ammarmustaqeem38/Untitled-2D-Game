@@ -7,24 +7,6 @@
 [ext_resource type="Script" uid="uid://ch0ecbqgkapgd" path="res://ExitDoor2.cs" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://2vm1ry8tve8i" path="res://Spritos/BthroomDoorIso.png" id="8_kek77"]
 
-[sub_resource type="CSharpScript" id="CSharpScript_lquwl"]
-script/source = "using Godot;
-using System;
-
-public partial class Machi : Sprite2D
-{
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-}
-"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
 size = Vector2(20, 595)
 
@@ -65,7 +47,6 @@ script = ExtResource("1_7mycd")
 position = Vector2(75.90277, 275)
 scale = Vector2(0.44870993, 0.48641783)
 texture = ExtResource("3_lquwl")
-script = SubResource("CSharpScript_lquwl")
 
 [node name="Bed" type="Sprite2D" parent="." unique_id=1646273311]
 position = Vector2(158.99998, 170.00002)
