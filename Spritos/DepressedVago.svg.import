@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4q335xxs2p"
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://bxmg5051r1dvf"
+path="res://.godot/imported/DepressedVago.svg-dcd29559278d7174bd107d3bc4cf7f60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://Spritos/DepressedVago.svg"
+dest_files=["res://.godot/imported/DepressedVago.svg-dcd29559278d7174bd107d3bc4cf7f60.ctex"]
 
 [params]
 

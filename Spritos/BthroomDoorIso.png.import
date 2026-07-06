@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2vm1ry8tve8i"
-path="res://.godot/imported/BthroomDoorIso.png-475a6c206f0b1f00d999554d1889340b.ctex"
+path="res://.godot/imported/BthroomDoorIso.png-ddcd02cf3e5cb64768da5c7fc4b79519.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BthroomDoorIso.png"
-dest_files=["res://.godot/imported/BthroomDoorIso.png-475a6c206f0b1f00d999554d1889340b.ctex"]
+source_file="res://Spritos/BthroomDoorIso.png"
+dest_files=["res://.godot/imported/BthroomDoorIso.png-ddcd02cf3e5cb64768da5c7fc4b79519.ctex"]
 
 [params]
 

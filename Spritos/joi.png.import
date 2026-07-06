@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpj4brvqujusf"
-path="res://.godot/imported/titleScreen.svg-2e0818cd44d4bb659aa4174e8aa73250.ctex"
+uid="uid://xwmp6bvfg1fd"
+path="res://.godot/imported/joi.png-a4b31f27780305c138b255284b574097.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://titleScreen.svg"
-dest_files=["res://.godot/imported/titleScreen.svg-2e0818cd44d4bb659aa4174e8aa73250.ctex"]
+source_file="res://Spritos/joi.png"
+dest_files=["res://.godot/imported/joi.png-a4b31f27780305c138b255284b574097.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

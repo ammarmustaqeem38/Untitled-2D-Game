@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbk4tsvjlnii6"
-path="res://.godot/imported/TeenTalwarAerial.svg-626413842685127fb39ff75f95217d37.ctex"
+uid="uid://koixoxh20xej"
+path="res://.godot/imported/SamiPick2.svg-c5afb5460554370c484842fc076bd205.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TeenTalwarAerial.svg"
-dest_files=["res://.godot/imported/TeenTalwarAerial.svg-626413842685127fb39ff75f95217d37.ctex"]
+source_file="res://Spritos/SamiPick2.svg"
+dest_files=["res://.godot/imported/SamiPick2.svg-c5afb5460554370c484842fc076bd205.ctex"]
 
 [params]
 

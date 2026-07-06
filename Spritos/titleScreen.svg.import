@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://koixoxh20xej"
-path="res://.godot/imported/SamiPick2.svg-fa1ae6a012c7a3dfe500e5d1fd2476d9.ctex"
+uid="uid://dpj4brvqujusf"
+path="res://.godot/imported/titleScreen.svg-1491bfba7007c917d75464a4a96cc398.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SamiPick2.svg"
-dest_files=["res://.godot/imported/SamiPick2.svg-fa1ae6a012c7a3dfe500e5d1fd2476d9.ctex"]
+source_file="res://Spritos/titleScreen.svg"
+dest_files=["res://.godot/imported/titleScreen.svg-1491bfba7007c917d75464a4a96cc398.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5f5cyp2uhmfu"
-path="res://.godot/imported/Machiyara.svg-d15511a2502ed6e2b714bcc991df6b56.ctex"
+uid="uid://evfftp238oxe"
+path="res://.godot/imported/SamiPick1.svg-45ff514e5727b02d3aae602e3a1d5db6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Machiyara.svg"
-dest_files=["res://.godot/imported/Machiyara.svg-d15511a2502ed6e2b714bcc991df6b56.ctex"]
+source_file="res://Spritos/SamiPick1.svg"
+dest_files=["res://.godot/imported/SamiPick1.svg-45ff514e5727b02d3aae602e3a1d5db6.ctex"]
 
 [params]
 

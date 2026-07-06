@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkuomic11lrfl"
-path="res://.godot/imported/BedroomDoor.png-034ed936a0f19a83f2070efe230801a6.ctex"
+uid="uid://bovm71kkkv1fs"
+path="res://.godot/imported/dumbbell.svg-6946bb466bf252d396e94f17895c7aa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BedroomDoor.png"
-dest_files=["res://.godot/imported/BedroomDoor.png-034ed936a0f19a83f2070efe230801a6.ctex"]
+source_file="res://Spritos/dumbbell.svg"
+dest_files=["res://.godot/imported/dumbbell.svg-6946bb466bf252d396e94f17895c7aa2.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

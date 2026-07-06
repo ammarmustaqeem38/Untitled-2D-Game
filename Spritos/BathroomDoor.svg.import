@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xwmp6bvfg1fd"
-path="res://.godot/imported/joi.png-ef127a6c03f1b3384a696ae68d690fbc.ctex"
+uid="uid://cl33jdhg34rpd"
+path="res://.godot/imported/BathroomDoor.svg-7a1bf4d899063502c57882682439544a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joi.png"
-dest_files=["res://.godot/imported/joi.png-ef127a6c03f1b3384a696ae68d690fbc.ctex"]
+source_file="res://Spritos/BathroomDoor.svg"
+dest_files=["res://.godot/imported/BathroomDoor.svg-7a1bf4d899063502c57882682439544a.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

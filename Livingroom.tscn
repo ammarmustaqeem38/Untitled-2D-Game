@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://4h3hhujpg0jq"]
 
 [ext_resource type="Script" uid="uid://bjsrge3rpqleg" path="res://Livingroom.cs" id="1_bwb4e"]
-[ext_resource type="Texture2D" uid="uid://wdb2he8wuwt1" path="res://this-bed-icon-pixel-art-260nw-2310043811-removebg-preview.png" id="1_cwb03"]
+[ext_resource type="Texture2D" uid="uid://wdb2he8wuwt1" path="res://Spritos/this-bed-icon-pixel-art-260nw-2310043811-removebg-preview.png" id="1_cwb03"]
 
 [node name="Livingroom" type="Node2D" unique_id=1393130397]
 script = ExtResource("1_bwb4e")

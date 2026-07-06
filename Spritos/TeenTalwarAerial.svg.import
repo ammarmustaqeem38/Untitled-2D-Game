@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxmg5051r1dvf"
-path="res://.godot/imported/DepressedVago.svg-8cc4777cbd5d2297dff94ceb40dc805f.ctex"
+uid="uid://bbk4tsvjlnii6"
+path="res://.godot/imported/TeenTalwarAerial.svg-93c71201185ef4849ad34a329fb2fcca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DepressedVago.svg"
-dest_files=["res://.godot/imported/DepressedVago.svg-8cc4777cbd5d2297dff94ceb40dc805f.ctex"]
+source_file="res://Spritos/TeenTalwarAerial.svg"
+dest_files=["res://.godot/imported/TeenTalwarAerial.svg-93c71201185ef4849ad34a329fb2fcca.ctex"]
 
 [params]
 
