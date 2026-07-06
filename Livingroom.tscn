@@ -2,17 +2,34 @@
 
 [ext_resource type="Script" uid="uid://bjsrge3rpqleg" path="res://Livingroom.cs" id="1_bwb4e"]
 [ext_resource type="Texture2D" uid="uid://wdb2he8wuwt1" path="res://Spritos/this-bed-icon-pixel-art-260nw-2310043811-removebg-preview.png" id="1_cwb03"]
+[ext_resource type="Texture2D" uid="uid://dkuomic11lrfl" path="res://Spritos/BedroomDoor.png" id="3_c7nfr"]
+[ext_resource type="Script" uid="uid://djcvqh75ockbr" path="res://BedDoor.cs" id="3_vcakb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrwbp"]
+size = Vector2(40, 69)
 
 [node name="Livingroom" type="Node2D" unique_id=1393130397]
 script = ExtResource("1_bwb4e")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1479100641]
+[node name="Kitchen (TO BE MADE)" type="StaticBody2D" parent="." unique_id=1479100641]
 position = Vector2(94, 99)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1246240900]
-position = Vector2(143, 516)
+[node name="Sprite2D" type="Sprite2D" parent="Kitchen (TO BE MADE)" unique_id=1246240900]
+position = Vector2(99, 28)
 texture = ExtResource("1_cwb03")
 
 [node name="Spawn" type="Marker2D" parent="." unique_id=911483930]
-position = Vector2(235, 598)
+position = Vector2(193, 541)
 gizmo_extents = 0.0
+
+[node name="BedDoor" type="Area2D" parent="." unique_id=2040176115]
+script = ExtResource("3_vcakb")
+
+[node name="Sprite2D" type="Sprite2D" parent="BedDoor" unique_id=456875504]
+position = Vector2(191, 601)
+scale = Vector2(0.32692307, 0.41472867)
+texture = ExtResource("3_c7nfr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedDoor" unique_id=1405584609]
+position = Vector2(191, 610.5)
+shape = SubResource("RectangleShape2D_jrwbp")

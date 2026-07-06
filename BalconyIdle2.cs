@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class Livingroom : Node2D
+public partial class BalconyIdle2 : Node2D
 {
 	public override void _Ready()
 	{
@@ -8,5 +8,8 @@ public partial class Livingroom : Node2D
 		var spawn = GetNode<Marker2D>("Spawn");
 
 		player.GlobalPosition = spawn.GlobalPosition;
+		
+		var audioPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+		audioPlayer.Play();
 	}
 }
