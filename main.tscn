@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Script" uid="uid://df26ddt34kvqx" path="res://Main.cs" id="1_7mycd"]
+[ext_resource type="Texture2D" uid="uid://bovm71kkkv1fs" path="res://dumbbell.svg" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://wdb2he8wuwt1" path="res://this-bed-icon-pixel-art-260nw-2310043811-removebg-preview.png" id="5_7mycd"]
+[ext_resource type="Texture2D" uid="uid://dkuomic11lrfl" path="res://BedroomDoor.png" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://ch0ecbqgkapgd" path="res://ExitDoor2.cs" id="7_5vw27"]
+[ext_resource type="Texture2D" uid="uid://2vm1ry8tve8i" path="res://BthroomDoorIso.png" id="8_kek77"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_lquwl"]
+script/source = "using Godot;
+using System;
+
+public partial class Machi : Sprite2D
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+size = Vector2(20, 595)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r0seb"]
+radius = 26.0
+height = 96.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jmf70"]
+a = Vector2(73, 5)
+b = Vector2(-9, 5)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_24k35"]
+a = Vector2(-111, 44)
+b = Vector2(177, 47)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hec6u"]
+a = Vector2(-604, 125)
+b = Vector2(-604, -446)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cu4k"]
+size = Vector2(252.46152, 53.598663)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrwbp"]
+size = Vector2(100.26921, 41.768394)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x6ier"]
+a = Vector2(268, -22)
+b = Vector2(-211, -21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6ier"]
+size = Vector2(67, 91)
+
+[node name="VagoRoom" type="Node2D" unique_id=1726179064]
+position = Vector2(0, 140)
+script = ExtResource("1_7mycd")
+
+[node name="Dumbbell" type="Sprite2D" parent="." unique_id=1430125154]
+position = Vector2(75.90277, 275)
+scale = Vector2(0.44870993, 0.48641783)
+texture = ExtResource("3_lquwl")
+script = SubResource("CSharpScript_lquwl")
+
+[node name="Bed" type="Sprite2D" parent="." unique_id=1646273311]
+position = Vector2(158.99998, 170.00002)
+scale = Vector2(2.6000001, 2.105634)
+texture = ExtResource("5_7mycd")
+flip_h = true
+
+[node name="BathroomDoor" type="Sprite2D" parent="." unique_id=507078002]
+position = Vector2(32, -82)
+scale = Vector2(0.7901234, 0.51548666)
+texture = ExtResource("8_kek77")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=949436306]
+position = Vector2(0, 1)
+points = PackedVector2Array(483, -138, 485, 9, 483.4013, 183.64345, 481, 446, 381, 444)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="." unique_id=1366848533]
+points = PackedVector2Array(297, 444, -8, 441)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Bounds" type="StaticBody2D" parent="." unique_id=1325934524]
+position = Vector2(483, -131)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds" unique_id=1572730553]
+position = Vector2(0, 287.5)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds" unique_id=2103906795]
+position = Vector2(-405, 409)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_r0seb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bounds" unique_id=927366293]
+position = Vector2(-88, 573)
+shape = SubResource("SegmentShape2D_jmf70")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bounds" unique_id=1085358970]
+position = Vector2(-365, 529)
+shape = SubResource("SegmentShape2D_24k35")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Bounds" unique_id=1201647432]
+position = Vector2(115, 446)
+shape = SubResource("SegmentShape2D_hec6u")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Bounds" unique_id=305023789]
+position = Vector2(-324.23077, 315.20068)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_7cu4k")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Bounds" unique_id=2043162633]
+position = Vector2(-404.1346, 267.8842)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_jrwbp")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Bounds" unique_id=1117563990]
+position = Vector2(-272, 15)
+shape = SubResource("SegmentShape2D_x6ier")
+
+[node name="ExitDoor2" type="Area2D" parent="." unique_id=1629662188]
+script = ExtResource("7_5vw27")
+
+[node name="ExitDoorSprite" type="Sprite2D" parent="ExitDoor2" unique_id=477499602]
+position = Vector2(384, -90.5)
+scale = Vector2(0.47692314, 0.46124032)
+texture = ExtResource("6_7mycd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor2" unique_id=195582996]
+position = Vector2(384.5, -89.5)
+shape = SubResource("RectangleShape2D_x6ier")

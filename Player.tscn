@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ckudr8chj1kgo"]
+
+[ext_resource type="Script" uid="uid://bjsrge3rpqleg" path="res://Livingroom.cs" id="1_kne1u"]
+[ext_resource type="Script" uid="uid://c1yh3u8s3mux" path="res://Player.cs" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_kne1u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e80uo"]
+radius = 40.0
+
+[node name="Player" type="Node2D" unique_id=2045455743]
+script = ExtResource("1_kne1u")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1895533598]
+position = Vector2(224, 236)
+script = ExtResource("1_kpjcp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=593336590]
+position = Vector2(51.09723, -44)
+scale = Vector2(0.59781253, 0.56578517)
+texture = ExtResource("2_kne1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=88405812]
+position = Vector2(52, -43)
+shape = SubResource("CircleShape2D_e80uo")

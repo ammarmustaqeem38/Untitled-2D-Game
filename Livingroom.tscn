@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://4h3hhujpg0jq"]
+
+[ext_resource type="Script" uid="uid://bjsrge3rpqleg" path="res://Livingroom.cs" id="1_bwb4e"]
+[ext_resource type="Texture2D" uid="uid://wdb2he8wuwt1" path="res://this-bed-icon-pixel-art-260nw-2310043811-removebg-preview.png" id="1_cwb03"]
+
+[node name="Livingroom" type="Node2D" unique_id=1393130397]
+script = ExtResource("1_bwb4e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1479100641]
+position = Vector2(94, 99)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1246240900]
+position = Vector2(143, 516)
+texture = ExtResource("1_cwb03")
+
+[node name="Spawn" type="Marker2D" parent="." unique_id=911483930]
+position = Vector2(235, 598)
+gizmo_extents = 0.0
