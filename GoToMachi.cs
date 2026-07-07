@@ -9,7 +9,7 @@ public partial class GoToMachi : Area2D
 	
 		private void ChangeRoom()
 	{
-		GetTree().ChangeSceneToFile("res://BalconyIdle.tscn");
+		GetTree().ChangeSceneToFile("res://MachiExt.tscn");
 	}
 
 	private void OnBodyEntered(Node2D body)
