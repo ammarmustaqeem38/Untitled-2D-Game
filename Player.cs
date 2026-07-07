@@ -3,7 +3,7 @@ using Godot;
 public partial class Player : CharacterBody2D
 {
 	[Export] 
-	public float Speed = 400f;
+	public float Speed = 300f;
 
 	private AnimatedSprite2D anim;
 
@@ -51,12 +51,10 @@ public partial class Player : CharacterBody2D
 		}
 		else if (direction.X < 0)
 		{
-			// If you have a separate "walk_left" animation:
-			anim.Play("walk_left");
 			
-			// OR if you want to reuse "walk_right" flipped, uncomment below:
-			// anim.Play("walk_right");
-			// anim.FlipH = true;
+			// to reuse "walk_right" flipped, uncomment below:
+			 anim.Play("walk_right");
+			 anim.FlipH = true;
 		}
 		// Handle vertical movement animations
 		else if (direction.Y > 0)
