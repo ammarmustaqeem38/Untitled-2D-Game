@@ -1,23 +1,72 @@
 [gd_scene format=3 uid="uid://4h3hhujpg0jq"]
 
 [ext_resource type="Script" uid="uid://bjsrge3rpqleg" path="res://Livingroom.cs" id="1_bwb4e"]
-[ext_resource type="Texture2D" uid="uid://wdb2he8wuwt1" path="res://Spritos/this-bed-icon-pixel-art-260nw-2310043811-removebg-preview.png" id="1_cwb03"]
+[ext_resource type="Texture2D" uid="uid://cex8l01tu2mg4" path="res://Spritos/KitchenCounter.png" id="2_m23lq"]
+[ext_resource type="Texture2D" uid="uid://2xfoafprmph7" path="res://Spritos/fridge.png" id="3_af8cy"]
 [ext_resource type="Texture2D" uid="uid://dkuomic11lrfl" path="res://Spritos/BedroomDoor.png" id="3_c7nfr"]
 [ext_resource type="Script" uid="uid://djcvqh75ockbr" path="res://BedDoor.cs" id="3_vcakb"]
 [ext_resource type="AudioStream" uid="uid://bl3hixvhi7ep3" path="res://Audio/AshfaqMusic.mp3" id="5_pgvyl"]
+[ext_resource type="Script" uid="uid://clcnomlsjw5fh" path="res://GoToMachi.cs" id="7_af8cy"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_feac4"]
+a = Vector2(315, -5)
+b = Vector2(-74, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jrwbp"]
+a = Vector2(-9, -260)
+b = Vector2(-4, -34)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jmf70"]
+a = Vector2(-20, 6)
+b = Vector2(353, 7)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_24k35"]
+a = Vector2(14, -156)
+b = Vector2(14, 178)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrwbp"]
-size = Vector2(40, 69)
+size = Vector2(66, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cu4k"]
+size = Vector2(48, 94)
 
 [node name="Livingroom" type="Node2D" unique_id=1393130397]
 script = ExtResource("1_bwb4e")
 
 [node name="Kitchen (TO BE MADE)" type="StaticBody2D" parent="." unique_id=1479100641]
-position = Vector2(94, 99)
+position = Vector2(89, 100)
 
-[node name="Sprite2D" type="Sprite2D" parent="Kitchen (TO BE MADE)" unique_id=1246240900]
-position = Vector2(99, 28)
-texture = ExtResource("1_cwb03")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen (TO BE MADE)" unique_id=769654237]
+position = Vector2(-15, 244)
+shape = SubResource("SegmentShape2D_feac4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Kitchen (TO BE MADE)" unique_id=656656580]
+position = Vector2(311, 165)
+shape = SubResource("SegmentShape2D_jrwbp")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Kitchen (TO BE MADE)" unique_id=1116118821]
+position = Vector2(-68, -84)
+shape = SubResource("SegmentShape2D_jmf70")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Kitchen (TO BE MADE)" unique_id=697741553]
+position = Vector2(-98, 57)
+shape = SubResource("SegmentShape2D_24k35")
+
+[node name="Line2D" type="Line2D" parent="Kitchen (TO BE MADE)" unique_id=872300923]
+position = Vector2(-1.9807625, 91.47742)
+scale = Vector2(0.9807692, 1.8241206)
+points = PackedVector2Array(306.88232, 27.148735, 303.82352, -32.05787, 306.88232, -99.48761, -93, -101, -92, 78, 129, 77, 303.82352, 74.84295)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Kitchen (TO BE MADE)" unique_id=1562523249]
+position = Vector2(178, -20)
+scale = Vector2(1.3653846, 1.2285714)
+texture = ExtResource("2_m23lq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Kitchen (TO BE MADE)" unique_id=1710738498]
+position = Vector2(14.500008, 150.00002)
+scale = Vector2(0.8115385, 0.86428577)
+texture = ExtResource("3_af8cy")
 
 [node name="Spawn" type="Marker2D" parent="." unique_id=911483930]
 position = Vector2(193, 541)
@@ -27,12 +76,12 @@ gizmo_extents = 0.0
 script = ExtResource("3_vcakb")
 
 [node name="Sprite2D" type="Sprite2D" parent="BedDoor" unique_id=456875504]
-position = Vector2(191, 601)
-scale = Vector2(0.32692307, 0.41472867)
+position = Vector2(212.75, 587.75)
+scale = Vector2(0.49423078, 0.51744187)
 texture = ExtResource("3_c7nfr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BedDoor" unique_id=1405584609]
-position = Vector2(191, 610.5)
+position = Vector2(214, 600.5)
 shape = SubResource("RectangleShape2D_jrwbp")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=54148648]
@@ -43,3 +92,16 @@ max_distance = 4096.0
 [node name="Ashfaq" type="StaticBody2D" parent="." unique_id=898305477]
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="Ashfaq" unique_id=451118164]
+
+[node name="ExitDoor" type="Area2D" parent="." unique_id=134689445]
+position = Vector2(1018, 614)
+script = ExtResource("7_af8cy")
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitDoor" unique_id=919129473]
+position = Vector2(-5.0000076, -29.999992)
+scale = Vector2(0.4576923, 0.5736434)
+texture = ExtResource("3_c7nfr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor" unique_id=2008396452]
+position = Vector2(-4, -20)
+shape = SubResource("RectangleShape2D_7cu4k")

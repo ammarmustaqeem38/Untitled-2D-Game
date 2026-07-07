@@ -12,8 +12,8 @@
 size = Vector2(20, 595)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r0seb"]
-radius = 26.0
-height = 96.0
+radius = 13.0
+height = 86.0
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jmf70"]
 a = Vector2(73, 5)
@@ -28,14 +28,13 @@ a = Vector2(-604, 125)
 b = Vector2(-604, -446)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7cu4k"]
-size = Vector2(252.46152, 53.598663)
+size = Vector2(161.99998, 52.000004)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrwbp"]
-size = Vector2(100.26921, 41.768394)
+size = Vector2(50.999992, 42)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_x6ier"]
-a = Vector2(268, -22)
-b = Vector2(-211, -21)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmf70"]
+size = Vector2(63, 115)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6ier"]
 size = Vector2(67, 91)
@@ -49,13 +48,13 @@ position = Vector2(0, 140)
 script = ExtResource("1_7mycd")
 
 [node name="Dumbbell" type="Sprite2D" parent="." unique_id=1430125154]
-position = Vector2(75.90277, 275)
-scale = Vector2(0.44870993, 0.48641783)
+position = Vector2(64.75, 283.7784)
+scale = Vector2(0.33146068, 0.28318954)
 texture = ExtResource("3_lquwl")
 
 [node name="Bed" type="Sprite2D" parent="." unique_id=1646273311]
-position = Vector2(158.99998, 170.00002)
-scale = Vector2(2.6000001, 2.105634)
+position = Vector2(79.499985, 173)
+scale = Vector2(1.4115384, 1.5352111)
 texture = ExtResource("5_7mycd")
 flip_h = true
 
@@ -81,7 +80,7 @@ position = Vector2(0, 287.5)
 shape = SubResource("RectangleShape2D_272bh")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds" unique_id=2103906795]
-position = Vector2(-405, 409)
+position = Vector2(-416, 418)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_r0seb")
 
@@ -98,18 +97,20 @@ position = Vector2(115, 446)
 shape = SubResource("SegmentShape2D_hec6u")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Bounds" unique_id=305023789]
-position = Vector2(-324.23077, 315.20068)
+position = Vector2(-391, 314)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_7cu4k")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Bounds" unique_id=2043162633]
-position = Vector2(-404.1346, 267.8842)
+position = Vector2(-446.5, 280)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_jrwbp")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Bounds" unique_id=1117563990]
-position = Vector2(-272, 15)
-shape = SubResource("SegmentShape2D_x6ier")
+position = Vector2(-450.5, 48.5)
+shape = SubResource("RectangleShape2D_jmf70")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Bounds" unique_id=1150152712]
 
 [node name="ExitDoor2" type="Area2D" parent="." unique_id=1629662188]
 script = ExtResource("7_5vw27")

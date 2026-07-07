@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://c1yh3u8s3mux" path="res://Player.cs" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://c50m7g30qikhd" path="res://Spritos/Vago_anim.png" id="2_kpjcp"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e80uo"]
-radius = 40.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
+size = Vector2(32, 98)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d6rpx"]
 atlas = ExtResource("2_kpjcp")
@@ -151,13 +151,13 @@ position = Vector2(224, 236)
 script = ExtResource("1_kpjcp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=88405812]
-position = Vector2(52, -43)
-shape = SubResource("CircleShape2D_e80uo")
+position = Vector2(54, -35)
+shape = SubResource("RectangleShape2D_kpjcp")
 
 [node name="Player" type="Node2D" parent="." unique_id=2045455743]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1854887494]
-position = Vector2(50.999992, -42.000008)
-scale = Vector2(0.7481692, 0.6930513)
+position = Vector2(37.99999, -42.000004)
+scale = Vector2(1.1566935, 1.104859)
 sprite_frames = SubResource("SpriteFrames_7cu4k")
 animation = &"walk_down"
