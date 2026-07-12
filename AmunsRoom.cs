@@ -6,6 +6,8 @@ public partial class AmunsRoom : Node2D
 	{
 		var player = GetNode<CharacterBody2D>("/root/Player");
 		var spawn = GetNode<Marker2D>("Spawn");
+		var audioPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+		audioPlayer.Play();
 		player.GlobalPosition = spawn.GlobalPosition;
 	}
 }

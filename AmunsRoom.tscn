@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://byjjcde6uv3fh" path="res://Spritos/MachiInt_CommonBathroomToilet.png" id="6_toilet"]
 [ext_resource type="Texture2D" uid="uid://ddc0gbie5h24x" path="res://Spritos/AminDrums.png" id="7_paw55"]
 [ext_resource type="Texture2D" uid="uid://l5fjv6oslrsr" path="res://Spritos/MachiInt_sofas.png" id="8_agrjh"]
+[ext_resource type="AudioStream" uid="uid://bvqohs5xuskwf" path="res://Audio/AmunsRoom-BesameLisaOno.mp3" id="9_paw55"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7cu4k"]
 atlas = ExtResource("8_agrjh")
@@ -34,28 +35,28 @@ a = Vector2(96, 768)
 b = Vector2(760, 768)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bottom_right"]
-a = Vector2(1010, 768)
-b = Vector2(1375, 771)
+a = Vector2(950, 768)
+b = Vector2(1184, 768)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bath_top"]
 a = Vector2(760, 768)
 b = Vector2(820, 768)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bath_top_right"]
-a = Vector2(950, 768)
-b = Vector2(1010, 768)
+a = Vector2(1184, 768)
+b = Vector2(1387, 768)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bath_left"]
 a = Vector2(760, 768)
-b = Vector2(760, 984)
+b = Vector2(760, 1021)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bath_right"]
-a = Vector2(1393, 774)
-b = Vector2(1399, 1022)
+a = Vector2(1387, 768)
+b = Vector2(1387, 1021)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bath_bottom"]
-a = Vector2(767, 1022)
-b = Vector2(1393, 1028)
+a = Vector2(760, 1021)
+b = Vector2(1387, 1021)
 
 [node name="AmunsRoom" type="Node2D" unique_id=1534152271]
 script = ExtResource("1_room")
@@ -215,7 +216,7 @@ joint_mode = 2
 antialiased = true
 
 [node name="BottomWallRight" type="Line2D" parent="WallLines" unique_id=1429531585]
-points = PackedVector2Array(1010, 768, 1184, 768)
+points = PackedVector2Array(950, 768, 1184, 768)
 width = 6.0
 default_color = Color(0, 0, 0, 1)
 joint_mode = 2
@@ -229,28 +230,28 @@ joint_mode = 2
 antialiased = true
 
 [node name="BathroomTopRightWall" type="Line2D" parent="WallLines" unique_id=1569554371]
-points = PackedVector2Array(950, 768, 1010, 768)
+points = PackedVector2Array(1184, 768, 1387, 768)
 width = 6.0
 default_color = Color(0, 0, 0, 1)
 joint_mode = 2
 antialiased = true
 
 [node name="BathroomLeftWall" type="Line2D" parent="WallLines" unique_id=2130583096]
-points = PackedVector2Array(760, 768, 760, 984)
+points = PackedVector2Array(760, 768, 760, 1021)
 width = 6.0
 default_color = Color(0, 0, 0, 1)
 joint_mode = 2
 antialiased = true
 
 [node name="BathroomRightWall" type="Line2D" parent="WallLines" unique_id=1732930665]
-points = PackedVector2Array(1380, 771, 1382, 1025)
+points = PackedVector2Array(1387, 768, 1387, 1021)
 width = 6.0
 default_color = Color(0, 0, 0, 1)
 joint_mode = 2
 antialiased = true
 
 [node name="BathroomBottomWall" type="Line2D" parent="WallLines" unique_id=1841966996]
-points = PackedVector2Array(761, 1019, 948, 1017, 1382, 1027)
+points = PackedVector2Array(760, 1021, 1387, 1021)
 width = 6.0
 default_color = Color(0, 0, 0, 1)
 joint_mode = 2
@@ -290,3 +291,7 @@ shape = SubResource("SegmentShape2D_bath_right")
 
 [node name="BathroomBottomCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=506122995]
 shape = SubResource("SegmentShape2D_bath_bottom")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=647508750]
+position = Vector2(661, 166)
+stream = ExtResource("9_paw55")

@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bgcqgemrn0ncl" path="res://Spritos/MachiInt_CommonBathroomSink.png" id="7_sink"]
 [ext_resource type="Texture2D" uid="uid://byjjcde6uv3fh" path="res://Spritos/MachiInt_CommonBathroomToilet.png" id="8_toilet"]
 [ext_resource type="Script" uid="uid://di0tq6a87fqjp" path="res://GoToAmun.cs" id="9_c8s6a"]
+[ext_resource type="AudioStream" uid="uid://b4ybdt7j6m1fw" path="res://Audio/MachiInt_WGUpAndAtIt.mp3" id="10_nhqgg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nnbag"]
 load_path = "res://.godot/imported/MachiInt_GuestRoomCarpet.png-3bcd108c7e3400d9e928013ee129aa7a.ctex"
@@ -775,3 +776,4 @@ position = Vector2(1202, 466)
 shape = SubResource("RectangleShape2D_7cu4k")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1388010273]
+stream = ExtResource("10_nhqgg")

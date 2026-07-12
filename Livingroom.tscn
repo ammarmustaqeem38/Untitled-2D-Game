@@ -147,8 +147,9 @@ position = Vector2(214, 600.5)
 shape = SubResource("RectangleShape2D_jrwbp")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=54148648]
-position = Vector2(919, 170)
+position = Vector2(917, 330)
 stream = ExtResource("5_pgvyl")
+volume_db = -7.907
 max_distance = 4096.0
 
 [node name="Ashfaq" type="StaticBody2D" parent="." unique_id=898305477]
