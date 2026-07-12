@@ -65,10 +65,14 @@ texture = ExtResource("8_kek77")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=949436306]
 position = Vector2(0, 1)
-points = PackedVector2Array(483, -138, 485, 9, 483.4013, 183.64345, 481, 446, 381, 444)
+joint_mode = 2
+antialiased = true
+points = PackedVector2Array(483, -138, 483, 446, 381, 444)
 default_color = Color(0, 0, 0, 1)
 
 [node name="Line2D2" type="Line2D" parent="." unique_id=1366848533]
+joint_mode = 2
+antialiased = true
 points = PackedVector2Array(297, 444, -8, 441)
 default_color = Color(0, 0, 0, 1)
 

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dg7kffa0x5r4n"]
+
+[ext_resource type="Script" uid="uid://qi0i6pep7v6p" path="res://MachiInt.cs" id="1_lweql"]
+[ext_resource type="Texture2D" uid="uid://dkuomic11lrfl" path="res://Spritos/BedroomDoor.png" id="2_42up2"]
+[ext_resource type="Script" uid="uid://clcnomlsjw5fh" path="res://GoToMachi.cs" id="2_jq2fj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r0seb"]
+radius = 39.012817
+
+[node name="MachiInt" type="Node2D" unique_id=967399488]
+position = Vector2(461, 246)
+script = ExtResource("1_lweql")
+
+[node name="Spawn" type="Marker2D" parent="." unique_id=1383015052]
+position = Vector2(595, 199)
+
+[node name="Leave" type="Area2D" parent="." unique_id=2130065604]
+script = ExtResource("2_jq2fj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Leave" unique_id=1906342435]
+position = Vector2(590, 314)
+scale = Vector2(0.5692308, 0.627907)
+texture = ExtResource("2_42up2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leave" unique_id=1655752796]
+position = Vector2(588, 344)
+shape = SubResource("CircleShape2D_r0seb")

@@ -55,7 +55,9 @@ shape = SubResource("SegmentShape2D_24k35")
 [node name="Line2D" type="Line2D" parent="Kitchen (TO BE MADE)" unique_id=872300923]
 position = Vector2(-1.9807625, 91.47742)
 scale = Vector2(0.9807692, 1.8241206)
-points = PackedVector2Array(306.88232, 27.148735, 303.82352, -32.05787, 306.88232, -99.48761, -93, -101, -92, 78, 129, 77, 303.82352, 74.84295)
+joint_mode = 2
+antialiased = true
+points = PackedVector2Array(305, 27, 305, -100, -93, -100, -93, 78, 129, 78, 305, 75)
 default_color = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Kitchen (TO BE MADE)" unique_id=1562523249]
