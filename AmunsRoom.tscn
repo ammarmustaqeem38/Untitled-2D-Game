@@ -1,0 +1,292 @@
+[gd_scene format=3 uid="uid://cdhn836nv6oek"]
+
+[ext_resource type="Script" uid="uid://dfmyrygr663e7" path="res://AmunsRoom.cs" id="1_room"]
+[ext_resource type="Texture2D" uid="uid://dkuomic11lrfl" path="res://Spritos/BedroomDoor.png" id="2_door"]
+[ext_resource type="Texture2D" uid="uid://d34ndmj0oagmm" path="res://Spritos/AminBed1.png" id="3_ghe7c"]
+[ext_resource type="Texture2D" uid="uid://2vm1ry8tve8i" path="res://Spritos/BthroomDoorIso.png" id="4_bathdoor"]
+[ext_resource type="Texture2D" uid="uid://bgcqgemrn0ncl" path="res://Spritos/MachiInt_CommonBathroomSink.png" id="5_sink"]
+[ext_resource type="Texture2D" uid="uid://byjjcde6uv3fh" path="res://Spritos/MachiInt_CommonBathroomToilet.png" id="6_toilet"]
+[ext_resource type="Texture2D" uid="uid://ddc0gbie5h24x" path="res://Spritos/AminDrums.png" id="7_paw55"]
+[ext_resource type="Texture2D" uid="uid://l5fjv6oslrsr" path="res://Spritos/MachiInt_sofas.png" id="8_agrjh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cu4k"]
+atlas = ExtResource("8_agrjh")
+region = Rect2(230.3049, 0, 72.15082, 177.34744)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_top"]
+a = Vector2(96, 96)
+b = Vector2(1184, 96)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_left"]
+a = Vector2(96, 96)
+b = Vector2(96, 610)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_left_bottom"]
+a = Vector2(96, 710)
+b = Vector2(96, 768)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_right"]
+a = Vector2(1184, 96)
+b = Vector2(1184, 768)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bottom_left"]
+a = Vector2(96, 768)
+b = Vector2(760, 768)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bottom_right"]
+a = Vector2(1010, 768)
+b = Vector2(1375, 771)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bath_top"]
+a = Vector2(760, 768)
+b = Vector2(820, 768)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bath_top_right"]
+a = Vector2(950, 768)
+b = Vector2(1010, 768)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bath_left"]
+a = Vector2(760, 768)
+b = Vector2(760, 984)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bath_right"]
+a = Vector2(1393, 774)
+b = Vector2(1399, 1022)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bath_bottom"]
+a = Vector2(767, 1022)
+b = Vector2(1393, 1028)
+
+[node name="AmunsRoom" type="Node2D" unique_id=1534152271]
+script = ExtResource("1_room")
+
+[node name="Floors" type="Node2D" parent="." unique_id=280884024]
+z_index = -20
+
+[node name="RoomFloor" type="Polygon2D" parent="Floors" unique_id=365497511]
+color = Color(0.46, 0.43, 0.38, 1)
+polygon = PackedVector2Array(96, 96, 1184, 96, 1184, 768, 96, 768)
+
+[node name="BathroomFloor" type="Polygon2D" parent="Floors" unique_id=1922638336]
+position = Vector2(-1146.08, -131.55554)
+scale = Vector2(2.508, 1.1712962)
+color = Color(0.48, 0.58, 0.6, 1)
+polygon = PackedVector2Array(760, 768, 1010, 768, 1010, 984, 760, 984)
+
+[node name="Spawn" type="Marker2D" parent="." unique_id=1899869202]
+position = Vector2(155, 665)
+
+[node name="Lighting" type="Node2D" parent="." unique_id=1441974127]
+z_index = -10
+
+[node name="WindowSunlight" type="Polygon2D" parent="Lighting" unique_id=1513281111]
+color = Color(1, 0.88, 0.45, 0.18)
+polygon = PackedVector2Array(850, 130, 1020, 130, 1115, 500, 1075.1279, 500.00006, 720, 500)
+
+[node name="WindowSunlightCore" type="Polygon2D" parent="Lighting" unique_id=1722583127]
+color = Color(1, 0.96, 0.68, 0.12)
+polygon = PackedVector2Array(905, 130, 970, 130, 1035, 430, 815, 430)
+
+[node name="Props" type="Node2D" parent="." unique_id=371325742]
+
+[node name="EntryDoor" type="Sprite2D" parent="Props" unique_id=1259595691]
+position = Vector2(106, 665)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("2_door")
+
+[node name="Bed" type="Sprite2D" parent="Props" unique_id=1535712217]
+position = Vector2(367, 391)
+scale = Vector2(1.6570001, 1.4254999)
+texture = ExtResource("3_ghe7c")
+
+[node name="SofaRight" type="Polygon2D" parent="Props" unique_id=614454474]
+position = Vector2(388.99997, 222)
+scale = Vector2(0.57647157, 0.4266667)
+color = Color(0.07533527, 0.30609927, 0.24368131, 1)
+polygon = PackedVector2Array(1050, 285, 1135, 285, 1135, 510, 1050, 510)
+
+[node name="SofaRightSeat" type="Polygon2D" parent="Props" unique_id=81370235]
+position = Vector2(544, 243.00002)
+scale = Vector2(0.43396226, 0.37349397)
+color = Color(0.04216291, 0.45568568, 0.4084495, 1)
+polygon = PackedVector2Array(1066, 316, 1119, 316, 1119, 482, 1066, 482)
+
+[node name="WorkDesk" type="Polygon2D" parent="Props" unique_id=2064930152]
+color = Color(0.34, 0.2, 0.09, 1)
+polygon = PackedVector2Array(520, 126, 760, 126, 760, 192, 520, 192)
+
+[node name="DeskChair" type="Polygon2D" parent="Props" unique_id=1075933187]
+color = Color(0.14, 0.16, 0.18, 1)
+polygon = PackedVector2Array(590, 218, 690, 218, 690, 272, 590, 272)
+
+[node name="BookshelfTopLeft" type="Polygon2D" parent="Props" unique_id=1518488228]
+color = Color(0.27, 0.13, 0.05, 1)
+polygon = PackedVector2Array(130, 116, 390, 116, 390, 166, 130, 166)
+
+[node name="BookshelfTopLeftShelf1" type="Polygon2D" parent="Props" unique_id=1647499641]
+color = Color(0.55, 0.34, 0.13, 1)
+polygon = PackedVector2Array(178, 124, 183, 124, 183, 158, 178, 158)
+
+[node name="BookshelfTopLeftShelf2" type="Polygon2D" parent="Props" unique_id=1243934251]
+color = Color(0.55, 0.34, 0.13, 1)
+polygon = PackedVector2Array(226, 124, 231, 124, 231, 158, 226, 158)
+
+[node name="BookshelfTopLeftShelf3" type="Polygon2D" parent="Props" unique_id=1632960291]
+color = Color(0.55, 0.34, 0.13, 1)
+polygon = PackedVector2Array(274, 124, 279, 124, 279, 158, 274, 158)
+
+[node name="BookshelfTopLeftShelf4" type="Polygon2D" parent="Props" unique_id=129049561]
+color = Color(0.55, 0.34, 0.13, 1)
+polygon = PackedVector2Array(322, 124, 327, 124, 327, 158, 322, 158)
+
+[node name="Window" type="Polygon2D" parent="Props" unique_id=1594601184]
+color = Color(0.48, 0.78, 0.9, 1)
+polygon = PackedVector2Array(835, 102, 1035, 102, 1035, 130, 835, 130)
+
+[node name="WindowFrame" type="Line2D" parent="Props" unique_id=241088568]
+points = PackedVector2Array(835, 102, 1035, 102, 1035, 130, 835, 130, 835, 102, 935, 102, 935, 130)
+width = 4.0
+default_color = Color(0.12, 0.12, 0.12, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="BathroomDoor" type="Sprite2D" parent="Props" unique_id=1701233691]
+position = Vector2(885, 778)
+rotation = 1.5707964
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("4_bathdoor")
+
+[node name="BathroomSink" type="Sprite2D" parent="Props" unique_id=92192422]
+position = Vector2(1043, 975.00006)
+scale = Vector2(0.16, 0.18)
+texture = ExtResource("5_sink")
+
+[node name="BathroomToilet" type="Sprite2D" parent="Props" unique_id=1527554915]
+position = Vector2(1128, 809.00006)
+scale = Vector2(0.25, 0.24)
+texture = ExtResource("6_toilet")
+
+[node name="Drums" type="Sprite2D" parent="Props" unique_id=1960908192]
+position = Vector2(1051.4552, 638.9633)
+scale = Vector2(1.0348059, 0.9606511)
+texture = ExtResource("7_paw55")
+
+[node name="Sofa" type="Sprite2D" parent="Props" unique_id=148709502]
+modulate = Color(0.74509805, 0.5568628, 0.14509805, 1)
+position = Vector2(1114.0001, 373)
+scale = Vector2(2.0972223, 1.6864407)
+texture = SubResource("AtlasTexture_7cu4k")
+
+[node name="WallLines" type="Node2D" parent="." unique_id=1100398132]
+
+[node name="TopWall" type="Line2D" parent="WallLines" unique_id=105030043]
+points = PackedVector2Array(96, 96, 1184, 96)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="LeftWall" type="Line2D" parent="WallLines" unique_id=1971547999]
+points = PackedVector2Array(96, 96, 96, 610)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="LeftWallLower" type="Line2D" parent="WallLines" unique_id=6770210]
+points = PackedVector2Array(96, 710, 96, 768)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="RightWall" type="Line2D" parent="WallLines" unique_id=967939945]
+points = PackedVector2Array(1184, 96, 1184, 768)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="BottomWallLeft" type="Line2D" parent="WallLines" unique_id=1764665948]
+points = PackedVector2Array(96, 768, 760, 768)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="BottomWallRight" type="Line2D" parent="WallLines" unique_id=1429531585]
+points = PackedVector2Array(1010, 768, 1184, 768)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="BathroomTopWall" type="Line2D" parent="WallLines" unique_id=1282250452]
+points = PackedVector2Array(760, 768, 820, 768)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="BathroomTopRightWall" type="Line2D" parent="WallLines" unique_id=1569554371]
+points = PackedVector2Array(950, 768, 1010, 768)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="BathroomLeftWall" type="Line2D" parent="WallLines" unique_id=2130583096]
+points = PackedVector2Array(760, 768, 760, 984)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="BathroomRightWall" type="Line2D" parent="WallLines" unique_id=1732930665]
+points = PackedVector2Array(1380, 771, 1382, 1025)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="BathroomBottomWall" type="Line2D" parent="WallLines" unique_id=1841966996]
+points = PackedVector2Array(761, 1019, 948, 1017, 1382, 1027)
+width = 6.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="WallCollisions" type="StaticBody2D" parent="." unique_id=1803700559]
+
+[node name="TopWallCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=1555630336]
+shape = SubResource("SegmentShape2D_top")
+
+[node name="LeftWallCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=570320528]
+shape = SubResource("SegmentShape2D_left")
+
+[node name="LeftWallLowerCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=1240805007]
+shape = SubResource("SegmentShape2D_left_bottom")
+
+[node name="RightWallCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=1535161629]
+shape = SubResource("SegmentShape2D_right")
+
+[node name="BottomLeftCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=1849328167]
+shape = SubResource("SegmentShape2D_bottom_left")
+
+[node name="BottomRightCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=2084860581]
+shape = SubResource("SegmentShape2D_bottom_right")
+
+[node name="BathroomTopCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=484340903]
+shape = SubResource("SegmentShape2D_bath_top")
+
+[node name="BathroomTopRightCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=1793407902]
+shape = SubResource("SegmentShape2D_bath_top_right")
+
+[node name="BathroomLeftCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=252881097]
+shape = SubResource("SegmentShape2D_bath_left")
+
+[node name="BathroomRightCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=1941958759]
+shape = SubResource("SegmentShape2D_bath_right")
+
+[node name="BathroomBottomCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=506122995]
+shape = SubResource("SegmentShape2D_bath_bottom")

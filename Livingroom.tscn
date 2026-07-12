@@ -8,6 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://bl3hixvhi7ep3" path="res://Audio/AshfaqMusic.mp3" id="5_pgvyl"]
 [ext_resource type="Script" uid="uid://clcnomlsjw5fh" path="res://GoToMachi.cs" id="7_af8cy"]
 [ext_resource type="Texture2D" uid="uid://bwsy6khrxfxf1" path="res://Spritos/Ashfaq.png" id="7_hrbxq"]
+[ext_resource type="Texture2D" uid="uid://bmxfukrpgg6kp" path="res://Spritos/Ashfaq_Monster.png" id="8_wphnb"]
+[ext_resource type="Texture2D" uid="uid://mv2uio0bg6i" path="res://Spritos/Ashfaq-Dumbbell.png" id="9_l66y1"]
+[ext_resource type="Texture2D" uid="uid://chi3ynce100c" path="res://Spritos/Ashfaq_Freeweight.png" id="10_x40uf"]
+[ext_resource type="Texture2D" uid="uid://2vm1ry8tve8i" path="res://Spritos/BthroomDoorIso.png" id="12_l66y1"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_feac4"]
 a = Vector2(315, -5)
@@ -28,25 +32,32 @@ b = Vector2(14, 178)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrwbp"]
 size = Vector2(66, 89)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrbxq"]
+atlas = ExtResource("7_hrbxq")
+region = Rect2(161, 0, 75, 408)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_8hmg1"]
 atlas = ExtResource("7_hrbxq")
-region = Rect2(580, 0, 193, 1024)
+region = Rect2(236, 0, 75, 408)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nqkxe"]
 atlas = ExtResource("7_hrbxq")
-region = Rect2(773, 0, 193, 1024)
+region = Rect2(311, 0, 75, 408)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wphnb"]
 atlas = ExtResource("7_hrbxq")
-region = Rect2(966, 0, 193, 1024)
+region = Rect2(386, 0, 75, 408)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l66y1"]
 atlas = ExtResource("7_hrbxq")
-region = Rect2(1159, 0, 193, 1024)
+region = Rect2(461, 0, 75, 408)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r0seb"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrbxq")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8hmg1")
 }, {
@@ -67,29 +78,41 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7cu4k"]
 size = Vector2(48, 94)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hec6u"]
+a = Vector2(-169, -13)
+b = Vector2(118, -17)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7cu4k"]
+a = Vector2(302, 54)
+b = Vector2(43, 57)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x6ier"]
+a = Vector2(-105, 42)
+b = Vector2(64, 40)
+
 [node name="Livingroom" type="Node2D" unique_id=1393130397]
 script = ExtResource("1_bwb4e")
 
-[node name="Kitchen (TO BE MADE)" type="StaticBody2D" parent="." unique_id=1479100641]
+[node name="Kitchen" type="StaticBody2D" parent="." unique_id=1479100641]
 position = Vector2(89, 100)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen (TO BE MADE)" unique_id=769654237]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen" unique_id=769654237]
 position = Vector2(-15, 244)
 shape = SubResource("SegmentShape2D_feac4")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Kitchen (TO BE MADE)" unique_id=656656580]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Kitchen" unique_id=656656580]
 position = Vector2(311, 165)
 shape = SubResource("SegmentShape2D_jrwbp")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Kitchen (TO BE MADE)" unique_id=1116118821]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Kitchen" unique_id=1116118821]
 position = Vector2(-68, -84)
 shape = SubResource("SegmentShape2D_jmf70")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Kitchen (TO BE MADE)" unique_id=697741553]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Kitchen" unique_id=697741553]
 position = Vector2(-98, 57)
 shape = SubResource("SegmentShape2D_24k35")
 
-[node name="Line2D" type="Line2D" parent="Kitchen (TO BE MADE)" unique_id=872300923]
+[node name="Line2D" type="Line2D" parent="Kitchen" unique_id=872300923]
 position = Vector2(-1.9807625, 91.47742)
 scale = Vector2(0.9807692, 1.8241206)
 points = PackedVector2Array(305, 27, 305, -100, -93, -100, -93, 78, 129, 78, 305, 75)
@@ -97,12 +120,12 @@ default_color = Color(0, 0, 0, 1)
 joint_mode = 2
 antialiased = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Kitchen (TO BE MADE)" unique_id=1562523249]
+[node name="Sprite2D" type="Sprite2D" parent="Kitchen" unique_id=1562523249]
 position = Vector2(178, -20)
 scale = Vector2(1.3653846, 1.2285714)
 texture = ExtResource("2_m23lq")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Kitchen (TO BE MADE)" unique_id=1710738498]
+[node name="Sprite2D2" type="Sprite2D" parent="Kitchen" unique_id=1710738498]
 position = Vector2(14.500008, 150.00002)
 scale = Vector2(0.8115385, 0.86428577)
 texture = ExtResource("3_af8cy")
@@ -133,11 +156,26 @@ max_distance = 4096.0
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="Ashfaq" unique_id=451118164]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ashfaq" unique_id=1422520589]
-position = Vector2(837.0002, 253.00006)
-scale = Vector2(0.7901554, 0.4033203)
+position = Vector2(916, 346)
+scale = Vector2(1.7466654, 1.1985295)
 sprite_frames = SubResource("SpriteFrames_r0seb")
 animation = &"overhead_press"
-frame_progress = 0.507163
+frame_progress = 0.7434262
+
+[node name="MonsterEnergy" type="Sprite2D" parent="Ashfaq" unique_id=807508059]
+position = Vector2(986.81244, 373.0625)
+scale = Vector2(0.08664394, 0.06924132)
+texture = ExtResource("8_wphnb")
+
+[node name="DumbBells" type="Sprite2D" parent="Ashfaq" unique_id=1088431695]
+position = Vector2(897.5, 434)
+scale = Vector2(0.30384618, 0.23571427)
+texture = ExtResource("9_l66y1")
+
+[node name="Gymball" type="Sprite2D" parent="Ashfaq" unique_id=774727050]
+position = Vector2(819.75, 373.5)
+scale = Vector2(0.25099996, 0.322)
+texture = ExtResource("10_x40uf")
 
 [node name="ExitDoor" type="Area2D" parent="." unique_id=134689445]
 position = Vector2(1018, 614)
@@ -151,3 +189,30 @@ texture = ExtResource("3_c7nfr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor" unique_id=2008396452]
 position = Vector2(-4, -20)
 shape = SubResource("RectangleShape2D_7cu4k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2008580706]
+
+[node name="Line2D" type="Line2D" parent="StaticBody2D" unique_id=527299439]
+points = PackedVector2Array(276, 643, 422, 640, 546, 640)
+default_color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1994098611]
+position = Vector2(817, 652)
+shape = SubResource("SegmentShape2D_hec6u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=842749409]
+position = Vector2(238, 587)
+shape = SubResource("SegmentShape2D_7cu4k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=15132903]
+position = Vector2(104, 602)
+shape = SubResource("SegmentShape2D_x6ier")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1318512075]
+position = Vector2(958.9375, 47.5)
+scale = Vector2(0.9120372, 0.47345132)
+texture = ExtResource("12_l66y1")
+
+[node name="Line2D2" type="Line2D" parent="StaticBody2D" unique_id=298398668]
+points = PackedVector2Array(639, 641, 812, 641, 934, 640)
+default_color = Color(0, 0, 0, 1)

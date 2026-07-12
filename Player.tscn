@@ -164,3 +164,5 @@ animation = &"walk_down"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=58437556]
 enabled = false
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=867301093]

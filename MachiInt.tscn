@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://l5fjv6oslrsr" path="res://Spritos/MachiInt_sofas.png" id="6_sofas"]
 [ext_resource type="Texture2D" uid="uid://bgcqgemrn0ncl" path="res://Spritos/MachiInt_CommonBathroomSink.png" id="7_sink"]
 [ext_resource type="Texture2D" uid="uid://byjjcde6uv3fh" path="res://Spritos/MachiInt_CommonBathroomToilet.png" id="8_toilet"]
+[ext_resource type="Script" uid="uid://di0tq6a87fqjp" path="res://GoToAmun.cs" id="9_c8s6a"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nnbag"]
 load_path = "res://.godot/imported/MachiInt_GuestRoomCarpet.png-3bcd108c7e3400d9e928013ee129aa7a.ctex"
@@ -178,6 +179,9 @@ size = Vector2(132, 94)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_leave"]
 size = Vector2(112, 72)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cu4k"]
+size = Vector2(20, 72.5)
+
 [node name="MachiInt" type="Node2D" unique_id=967399488]
 script = ExtResource("1_lweql")
 
@@ -195,7 +199,7 @@ polygon = PackedVector2Array(80, 650, 480, 650, 480, 1050, 80, 1050)
 
 [node name="LivingRoomFloor" type="Polygon2D" parent="Floors" unique_id=2010504431]
 color = Color(0.45, 0.49, 0.44, 1)
-polygon = PackedVector2Array(320, 288, 1216, 288, 1216, 608, 320, 608)
+polygon = PackedVector2Array(320, 288, 1216, 288, 1216, 462.9876, 1216, 608, 320, 608)
 
 [node name="BalconyFloor" type="Polygon2D" parent="Floors" unique_id=1750907854]
 color = Color(0.34, 0.44, 0.5, 1)
@@ -368,7 +372,7 @@ position = Vector2(914.5, 700)
 scale = Vector2(0.81065094, 0.6071428)
 texture = ExtResource("5_nnbag")
 
-[node name="LeftBedroomDoorTop" type="Sprite2D" parent="Props" unique_id=266853030]
+[node name="SamiDoor" type="Sprite2D" parent="Props" unique_id=266853030]
 position = Vector2(307.2, 496)
 scale = Vector2(0.28, 0.28)
 texture = ExtResource("2_42up2")
@@ -378,7 +382,7 @@ position = Vector2(307.2, 572)
 scale = Vector2(0.28, 0.28)
 texture = ExtResource("2_42up2")
 
-[node name="RightBedroomDoor" type="Sprite2D" parent="Props" unique_id=1586845182]
+[node name="AmunDoor" type="Sprite2D" parent="Props" unique_id=1586845182]
 position = Vector2(1228.8, 464)
 scale = Vector2(0.36, 0.43)
 texture = ExtResource("2_42up2")
@@ -762,3 +766,12 @@ texture = ExtResource("2_42up2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Leave" unique_id=1655752796]
 shape = SubResource("RectangleShape2D_leave")
+
+[node name="GoToAmun" type="Area2D" parent="." unique_id=206130929]
+script = ExtResource("9_c8s6a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoToAmun" unique_id=1731646816]
+position = Vector2(1202, 466)
+shape = SubResource("RectangleShape2D_7cu4k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1388010273]

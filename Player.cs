@@ -7,17 +7,21 @@ public partial class Player : CharacterBody2D
 
 	private AnimatedSprite2D anim;
 	private Camera2D camera;
+	private AudioListener2D audioListener;
 
 	public override void _Ready()
 	{
 		anim = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		camera = GetNode<Camera2D>("Camera2D");
+		audioListener = GetNode<AudioListener2D>("AudioListener2D");
 		UpdateCameraEnabled();
+		UpdateAudioListener();
 	}
 
 	public override void _Process(double delta)
 	{
 		UpdateCameraEnabled();
+		UpdateAudioListener();
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -77,6 +81,15 @@ public partial class Player : CharacterBody2D
 
 	private void UpdateCameraEnabled()
 	{
-		camera.Enabled = GetTree().CurrentScene?.SceneFilePath == "res://MachiInt.tscn";
+		var scenePath = GetTree().CurrentScene?.SceneFilePath;
+		camera.Enabled = scenePath == "res://MachiInt.tscn" || scenePath == "res://AmunsRoom.tscn";
+	}
+
+	private void UpdateAudioListener()
+	{
+		if (!audioListener.IsCurrent())
+		{
+			audioListener.MakeCurrent();
+		}
 	}
 }
