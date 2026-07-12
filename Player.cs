@@ -6,10 +6,18 @@ public partial class Player : CharacterBody2D
 	public float Speed = 300f;
 
 	private AnimatedSprite2D anim;
+	private Camera2D camera;
 
 	public override void _Ready()
 	{
 		anim = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		camera = GetNode<Camera2D>("Camera2D");
+		UpdateCameraEnabled();
+	}
+
+	public override void _Process(double delta)
+	{
+		UpdateCameraEnabled();
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -65,5 +73,10 @@ public partial class Player : CharacterBody2D
 		{
 			anim.Play("walk_up");
 		}
+	}
+
+	private void UpdateCameraEnabled()
+	{
+		camera.Enabled = GetTree().CurrentScene?.SceneFilePath == "res://MachiInt.tscn";
 	}
 }
