@@ -8,6 +8,11 @@ public partial class Livingroom : Node2D
 		var spawn = GetNode<Marker2D>("Spawn");
 		var audioPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 		audioPlayer.Play();
+		
+	var sprite = GetNode<AnimatedSprite2D>("Ashfaq/AnimatedSprite2D");
+		sprite.Play("overhead_press"); // Use your animation name
+		
+		
 		player.GlobalPosition = spawn.GlobalPosition;
 	}
 }

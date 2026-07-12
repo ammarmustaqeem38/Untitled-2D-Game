@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://djcvqh75ockbr" path="res://BedDoor.cs" id="3_vcakb"]
 [ext_resource type="AudioStream" uid="uid://bl3hixvhi7ep3" path="res://Audio/AshfaqMusic.mp3" id="5_pgvyl"]
 [ext_resource type="Script" uid="uid://clcnomlsjw5fh" path="res://GoToMachi.cs" id="7_af8cy"]
+[ext_resource type="Texture2D" uid="uid://bwsy6khrxfxf1" path="res://Spritos/Ashfaq.png" id="7_hrbxq"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_feac4"]
 a = Vector2(315, -5)
@@ -26,6 +27,42 @@ b = Vector2(14, 178)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrwbp"]
 size = Vector2(66, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hmg1"]
+atlas = ExtResource("7_hrbxq")
+region = Rect2(580, 0, 193, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqkxe"]
+atlas = ExtResource("7_hrbxq")
+region = Rect2(773, 0, 193, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wphnb"]
+atlas = ExtResource("7_hrbxq")
+region = Rect2(966, 0, 193, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l66y1"]
+atlas = ExtResource("7_hrbxq")
+region = Rect2(1159, 0, 193, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r0seb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hmg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqkxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wphnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l66y1")
+}],
+"loop": 1,
+"name": &"overhead_press",
+"speed": 7.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7cu4k"]
 size = Vector2(48, 94)
@@ -55,10 +92,10 @@ shape = SubResource("SegmentShape2D_24k35")
 [node name="Line2D" type="Line2D" parent="Kitchen (TO BE MADE)" unique_id=872300923]
 position = Vector2(-1.9807625, 91.47742)
 scale = Vector2(0.9807692, 1.8241206)
-joint_mode = 2
-antialiased = true
 points = PackedVector2Array(305, 27, 305, -100, -93, -100, -93, 78, 129, 78, 305, 75)
 default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+antialiased = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Kitchen (TO BE MADE)" unique_id=1562523249]
 position = Vector2(178, -20)
@@ -94,6 +131,13 @@ max_distance = 4096.0
 [node name="Ashfaq" type="StaticBody2D" parent="." unique_id=898305477]
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="Ashfaq" unique_id=451118164]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ashfaq" unique_id=1422520589]
+position = Vector2(837.0002, 253.00006)
+scale = Vector2(0.7901554, 0.4033203)
+sprite_frames = SubResource("SpriteFrames_r0seb")
+animation = &"overhead_press"
+frame_progress = 0.507163
 
 [node name="ExitDoor" type="Area2D" parent="." unique_id=134689445]
 position = Vector2(1018, 614)
