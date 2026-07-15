@@ -5,14 +5,23 @@
 [ext_resource type="Texture2D" uid="uid://d34ndmj0oagmm" path="res://Spritos/AminBed1.png" id="3_ghe7c"]
 [ext_resource type="Texture2D" uid="uid://2vm1ry8tve8i" path="res://Spritos/BthroomDoorIso.png" id="4_bathdoor"]
 [ext_resource type="Texture2D" uid="uid://bgcqgemrn0ncl" path="res://Spritos/MachiInt_CommonBathroomSink.png" id="5_sink"]
-[ext_resource type="Texture2D" uid="uid://byjjcde6uv3fh" path="res://Spritos/MachiInt_CommonBathroomToilet.png" id="6_toilet"]
+[ext_resource type="Texture2D" uid="uid://c8frwpw3rdych" path="res://Spritos/AmunRoom_Bathroom1.png" id="6_agrjh"]
 [ext_resource type="Texture2D" uid="uid://ddc0gbie5h24x" path="res://Spritos/AminDrums.png" id="7_paw55"]
 [ext_resource type="Texture2D" uid="uid://l5fjv6oslrsr" path="res://Spritos/MachiInt_sofas.png" id="8_agrjh"]
+[ext_resource type="Texture2D" uid="uid://drq7mdf2jwdfi" path="res://Spritos/AmunsRoom_Shower.png" id="9_dygv6"]
 [ext_resource type="AudioStream" uid="uid://bvqohs5xuskwf" path="res://Audio/AmunsRoom-BesameLisaOno.mp3" id="9_paw55"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrwbp"]
+atlas = ExtResource("6_agrjh")
+region = Rect2(257, 117.5, 57, 116)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7cu4k"]
 atlas = ExtResource("8_agrjh")
 region = Rect2(230.3049, 0, 72.15082, 177.34744)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmf70"]
+atlas = ExtResource("6_agrjh")
+region = Rect2(228.54544, 228.27272, 72.727264, 91.81819)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_top"]
 a = Vector2(96, 96)
@@ -158,14 +167,15 @@ scale = Vector2(0.34, 0.34)
 texture = ExtResource("4_bathdoor")
 
 [node name="BathroomSink" type="Sprite2D" parent="Props" unique_id=92192422]
-position = Vector2(1043, 975.00006)
-scale = Vector2(0.16, 0.18)
+position = Vector2(1048, 985.00006)
+scale = Vector2(0.226, 0.22800024)
 texture = ExtResource("5_sink")
 
 [node name="BathroomToilet" type="Sprite2D" parent="Props" unique_id=1527554915]
-position = Vector2(1128, 809.00006)
-scale = Vector2(0.25, 0.24)
-texture = ExtResource("6_toilet")
+texture_filter = 1
+position = Vector2(1196.7656, 806.51)
+scale = Vector2(1.0093203, 0.7498281)
+texture = SubResource("AtlasTexture_jrwbp")
 
 [node name="Drums" type="Sprite2D" parent="Props" unique_id=1960908192]
 position = Vector2(1051.4552, 638.9633)
@@ -177,6 +187,16 @@ modulate = Color(0.74509805, 0.5568628, 0.14509805, 1)
 position = Vector2(1114.0001, 373)
 scale = Vector2(2.0972223, 1.6864407)
 texture = SubResource("AtlasTexture_7cu4k")
+
+[node name="Shower" type="Sprite2D" parent="Props" unique_id=2027987396]
+position = Vector2(1331, 792)
+scale = Vector2(0.32115403, 0.27500013)
+texture = ExtResource("9_dygv6")
+
+[node name="BathMisca" type="Sprite2D" parent="Props" unique_id=1680500572]
+position = Vector2(1084, 783)
+scale = Vector2(1.0347216, 0.72802216)
+texture = SubResource("AtlasTexture_jmf70")
 
 [node name="WallLines" type="Node2D" parent="." unique_id=1100398132]
 
