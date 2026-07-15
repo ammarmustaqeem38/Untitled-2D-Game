@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bb37t1yual61c"]
+
+[ext_resource type="Script" uid="uid://c8v53nu5h1qry" path="res://MangiBaithak.cs" id="1_scene"]
+[ext_resource type="Texture2D" uid="uid://evfftp238oxe" path="res://Spritos/SamiPick1.svg" id="2_background"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dialogue"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MangiBaithak" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_scene")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_background")
+stretch_mode = 6
+
+[node name="DialoguePanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.0
+offset_top = -176.0
+offset_right = 390.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dialogue")
+
+[node name="DialogueText" type="Label" parent="DialoguePanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 756.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Amin:\"haan bc aagaya tu chars peenay\""
+autowrap_mode = 3
+
+[node name="ChoiceText" type="Label" parent="DialoguePanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 72.0
+offset_right = 756.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "(x) normal response    (c) cunt response    (v) nothingburger"
+autowrap_mode = 3

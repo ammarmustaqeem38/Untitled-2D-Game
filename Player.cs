@@ -12,15 +12,25 @@ public partial class Player : CharacterBody2D
 	private static readonly string[] FirstPhoneCallDialogue =
 	{
 		"Soma: \"Yo vigo you wanna come over?\"",
-		"Vago: \"Na bro i got daawat\"",
+		"Vago: \"Nah bro i got daawat\"",
 		"Soma: \"Dude pleaseee\"",
-		"Vago: \"I said n o\"",
+		"Soma: \"Everyone's here\"",
+		"Vago: \"fuck you\"",
+		"Vago: \"kill yourself\"",
+		"Vago: \"you dont have sisters you dont know what its like etcetc\"",
+	};
+
+	private static readonly string[] HilalPhoneCallDialogue =
+	{
+		"Hilal: yaar aaja na",
+		"Vago: Haan jaani bas aaya",
 	};
 
 	private const float StepDistance = 48f;
 	private const double FirstCallTimeoutSeconds = 6.0;
 	private const double CallRetryDelaySeconds = 2.0;
 	private const double AutoAcceptDelaySeconds = 1.25;
+	private const double ObjectiveDelaySeconds = 0.5;
 	private const double RingtoneMixRate = 44100.0;
 
 	private AnimatedSprite2D anim;
@@ -34,20 +44,28 @@ public partial class Player : CharacterBody2D
 	private AudioStreamPlayer ringtonePlayer;
 	private AudioStreamGeneratorPlayback ringtonePlayback;
 	private string currentObjective = "";
+	private string pendingObjective = "";
+	private string incomingCaller = "";
+	private string lastScenePath = "";
 	private string[] activeDialogue = Array.Empty<string>();
+	private string[] incomingPhoneDialogue = Array.Empty<string>();
 	private Action dialogueCompleted;
+	private Action incomingPhoneCompleted;
 	private int dialogueIndex = -1;
 	private bool isDialogueActive;
 	private bool dialogueLocksMovement;
 	private bool isPhoneRinging;
 	private bool phoneAutoAccepts;
+	private bool phoneRetriesOnDecline;
 	private bool firstPhoneCallStarted;
+	private bool externalMovementLocked;
 	private bool wasXPressed;
 	private bool wasFPressed;
 	private bool wasHPressed;
 	private float stepDistanceAccumulator;
 	private double phoneRingElapsed;
 	private double phoneRetryCountdown;
+	private double pendingObjectiveDelay = -1.0;
 	private double ringtoneSampleTime;
 	private double ringtonePhase;
 
@@ -61,14 +79,17 @@ public partial class Player : CharacterBody2D
 		CreateRingtonePlayer();
 		UpdateCameraEnabled();
 		UpdateAudioListener();
+		UpdateSceneEntryEffects();
 	}
 
 	public override void _Process(double delta)
 	{
 		UpdateCameraEnabled();
 		UpdateAudioListener();
+		UpdateSceneEntryEffects();
 		UpdatePhoneCall(delta);
 		UpdateDialogueInput();
+		UpdateDelayedObjective(delta);
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -150,9 +171,38 @@ public partial class Player : CharacterBody2D
 		}
 	}
 
+	private void UpdateSceneEntryEffects()
+	{
+		var scenePath = GetTree().CurrentScene?.SceneFilePath ?? "";
+
+		if (scenePath == lastScenePath)
+		{
+			return;
+		}
+
+		lastScenePath = scenePath;
+
+		if (scenePath == "res://MachiExt.tscn" || scenePath == "res://MachiExit.tscn")
+		{
+			ClearObjective();
+		}
+	}
+
 	public bool IsInteractionUiActive => isDialogueActive || isPhoneRinging;
 
-	private bool IsMovementLocked => isPhoneRinging || (isDialogueActive && dialogueLocksMovement);
+	private bool IsMovementLocked => externalMovementLocked || isPhoneRinging || (isDialogueActive && dialogueLocksMovement);
+
+	public void SetCutsceneState(bool isActive, bool hidePlayer = true)
+	{
+		externalMovementLocked = isActive;
+		Visible = !(isActive && hidePlayer);
+
+		if (isActive)
+		{
+			Velocity = Vector2.Zero;
+			anim.Stop();
+		}
+	}
 
 	public void StartDialogue(string[] lines, Action onCompleted = null, bool lockMovement = false)
 	{
@@ -179,7 +229,22 @@ public partial class Player : CharacterBody2D
 		}
 
 		firstPhoneCallStarted = true;
-		StartIncomingPhoneCall(autoAccept: false);
+		StartIncomingPhoneCall(
+			"Soma",
+			FirstPhoneCallDialogue,
+			() => SetObjectiveAfterDelay("Find joint"),
+			autoAccept: false,
+			retryOnDecline: true);
+	}
+
+	public void StartHilalPhoneCall()
+	{
+		StartIncomingPhoneCall(
+			"Hilal",
+			HilalPhoneCallDialogue,
+			() => SetObjectiveAfterDelay("go clifton"),
+			autoAccept: true,
+			retryOnDecline: false);
 	}
 
 	private void UpdateDialogueInput()
@@ -223,13 +288,22 @@ public partial class Player : CharacterBody2D
 		ShowDialogueLine();
 	}
 
-	private void StartIncomingPhoneCall(bool autoAccept)
+	private void StartIncomingPhoneCall(
+		string caller,
+		string[] dialogue,
+		Action onCompleted = null,
+		bool autoAccept = false,
+		bool retryOnDecline = false)
 	{
+		incomingCaller = caller;
+		incomingPhoneDialogue = dialogue;
+		incomingPhoneCompleted = onCompleted;
 		phoneAutoAccepts = autoAccept;
+		phoneRetriesOnDecline = retryOnDecline;
 		phoneRingElapsed = 0.0;
 		isPhoneRinging = true;
 		dialoguePanel.Visible = true;
-		dialogueText.Text = "Incoming call: Soma";
+		dialogueText.Text = $"Incoming call: {incomingCaller}";
 		dialogueFooter.Text = phoneAutoAccepts ? "answering..." : "f: pick up    h: hang up";
 		dialogueFooter.Visible = true;
 		StartRingtone();
@@ -243,7 +317,12 @@ public partial class Player : CharacterBody2D
 
 			if (phoneRetryCountdown <= 0.0)
 			{
-				StartIncomingPhoneCall(autoAccept: true);
+				StartIncomingPhoneCall(
+					incomingCaller,
+					incomingPhoneDialogue,
+					incomingPhoneCompleted,
+					autoAccept: true,
+					retryOnDecline: false);
 			}
 		}
 
@@ -282,7 +361,7 @@ public partial class Player : CharacterBody2D
 	{
 		isPhoneRinging = false;
 		StopRingtone();
-		StartDialogue(FirstPhoneCallDialogue, lockMovement: true);
+		StartDialogue(incomingPhoneDialogue, incomingPhoneCompleted, lockMovement: true);
 	}
 
 	private void DeclineFirstPhoneCall()
@@ -292,7 +371,34 @@ public partial class Player : CharacterBody2D
 		dialogueText.Text = "";
 		dialogueFooter.Visible = false;
 		dialoguePanel.Visible = false;
-		phoneRetryCountdown = CallRetryDelaySeconds;
+
+		if (phoneRetriesOnDecline)
+		{
+			phoneRetryCountdown = CallRetryDelaySeconds;
+		}
+	}
+
+	private void SetObjectiveAfterDelay(string objective)
+	{
+		pendingObjective = objective;
+		pendingObjectiveDelay = ObjectiveDelaySeconds;
+	}
+
+	private void UpdateDelayedObjective(double delta)
+	{
+		if (pendingObjectiveDelay < 0.0)
+		{
+			return;
+		}
+
+		pendingObjectiveDelay -= delta;
+
+		if (pendingObjectiveDelay <= 0.0)
+		{
+			SetObjective(pendingObjective);
+			pendingObjective = "";
+			pendingObjectiveDelay = -1.0;
+		}
 	}
 
 	private void CreateDialogueUi()
@@ -427,6 +533,8 @@ public partial class Player : CharacterBody2D
 
 	public void ClearObjective()
 	{
+		pendingObjective = "";
+		pendingObjectiveDelay = -1.0;
 		SetObjective("");
 	}
 

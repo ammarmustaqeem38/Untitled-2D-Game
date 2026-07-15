@@ -389,6 +389,7 @@ scale = Vector2(0.36, 0.43)
 texture = ExtResource("2_42up2")
 
 [node name="LivingRoomSofas" type="Sprite2D" parent="Props" unique_id=2106227109]
+modulate = Color(0.5859645, 0.5166835, 0.40774098, 1)
 position = Vector2(1005.00006, 407)
 scale = Vector2(1.3536763, 1.4998496)
 texture = SubResource("AtlasTexture_machiint_sofas")

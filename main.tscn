@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://df26ddt34kvqx" path="res://Main.cs" id="1_7mycd"]
+[ext_resource type="Texture2D" uid="uid://ck8buwh1f5t6t" path="res://Spritos/jointGrail.png" id="3_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bovm71kkkv1fs" path="res://Spritos/dumbbell.svg" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://wdb2he8wuwt1" path="res://Spritos/this-bed-icon-pixel-art-260nw-2310043811-removebg-preview.png" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://dkuomic11lrfl" path="res://Spritos/BedroomDoor.png" id="6_7mycd"]
@@ -51,6 +52,11 @@ script = ExtResource("1_7mycd")
 position = Vector2(64.75, 283.7784)
 scale = Vector2(0.33146068, 0.28318954)
 texture = ExtResource("3_lquwl")
+
+[node name="JointGrail" type="Sprite2D" parent="." unique_id=963885072]
+position = Vector2(12.999954, 314.00003)
+scale = Vector2(0.038, 0.03199996)
+texture = ExtResource("3_5vw27")
 
 [node name="Bed" type="Sprite2D" parent="." unique_id=1646273311]
 position = Vector2(79.499985, 173)

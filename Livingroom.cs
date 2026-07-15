@@ -10,12 +10,23 @@ public partial class Livingroom : Node2D
 		"Ashfaq: \"Get out of my sight\"",
 	};
 
+	private static readonly string[] AshfaqRepeatDialogue =
+	{
+		"Ashfaq: \"I thought I told you to leave me alone\"",
+	};
+
 	private const float AshfaqInteractionDistance = 190f;
+	private const double AshfaqStrobeDuration = 1.2;
+	private const double AshfaqStrobeInterval = 0.045;
+
+	private static int ashfaqInteractionCount;
 
 	private Player player;
-	private Node2D ashfaq;
+	private AnimatedSprite2D ashfaq;
 	private Label promptLabel;
 	private bool wasEPressed;
+	private double ashfaqStrobeRemaining;
+	private double ashfaqStrobeTime;
 
 	public override void _Ready()
 	{
@@ -41,9 +52,10 @@ public partial class Livingroom : Node2D
 
 		if (isNearAshfaq && !player.IsInteractionUiActive && ePressed && !wasEPressed)
 		{
-			StartDialogue();
+			HandleAshfaqInteraction();
 		}
 
+		UpdateAshfaqStrobe(delta);
 		wasEPressed = ePressed;
 	}
 
@@ -63,9 +75,50 @@ public partial class Livingroom : Node2D
 		AddChild(promptLabel);
 	}
 
-	private void StartDialogue()
+	private void HandleAshfaqInteraction()
 	{
 		promptLabel.Visible = false;
-		player.StartDialogue(AshfaqDialogue, () => player.SetObjective("Get out of his sight"));
+
+		if (ashfaqInteractionCount == 0)
+		{
+			ashfaqInteractionCount++;
+			player.StartDialogue(AshfaqDialogue);
+			return;
+		}
+
+		if (ashfaqInteractionCount == 1)
+		{
+			ashfaqInteractionCount++;
+			player.StartDialogue(AshfaqRepeatDialogue);
+			return;
+		}
+
+		ashfaqInteractionCount++;
+		StartAshfaqStrobe();
+	}
+
+	private void StartAshfaqStrobe()
+	{
+		ashfaqStrobeRemaining = AshfaqStrobeDuration;
+		ashfaqStrobeTime = 0.0;
+	}
+
+	private void UpdateAshfaqStrobe(double delta)
+	{
+		if (ashfaqStrobeRemaining <= 0.0)
+		{
+			return;
+		}
+
+		ashfaqStrobeRemaining -= delta;
+		ashfaqStrobeTime += delta;
+
+		var isRedFrame = ((int)(ashfaqStrobeTime / AshfaqStrobeInterval) % 2) == 0;
+		ashfaq.Modulate = isRedFrame ? Colors.Red : Colors.White;
+
+		if (ashfaqStrobeRemaining <= 0.0)
+		{
+			ashfaq.Modulate = Colors.White;
+		}
 	}
 }

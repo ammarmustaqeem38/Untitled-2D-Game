@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://l5fjv6oslrsr" path="res://Spritos/MachiInt_sofas.png" id="8_agrjh"]
 [ext_resource type="Texture2D" uid="uid://drq7mdf2jwdfi" path="res://Spritos/AmunsRoom_Shower.png" id="9_dygv6"]
 [ext_resource type="AudioStream" uid="uid://bvqohs5xuskwf" path="res://Audio/AmunsRoom-BesameLisaOno.mp3" id="9_paw55"]
+[ext_resource type="Texture2D" uid="uid://8nn2mgufwhbk" path="res://Spritos/blip.png" id="11_dygv6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrwbp"]
 atlas = ExtResource("6_agrjh")
@@ -66,6 +67,13 @@ b = Vector2(1387, 1021)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bath_bottom"]
 a = Vector2(760, 1021)
 b = Vector2(1387, 1021)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0seb"]
+size = Vector2(21, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24k35"]
+atlas = ExtResource("11_dygv6")
+region = Rect2(102.78992, 238.90271, 16.385773, 24.88507)
 
 [node name="AmunsRoom" type="Node2D" unique_id=1534152271]
 script = ExtResource("1_room")
@@ -315,3 +323,15 @@ shape = SubResource("SegmentShape2D_bath_bottom")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=647508750]
 position = Vector2(661, 166)
 stream = ExtResource("9_paw55")
+
+[node name="TriggerMangiBaithak" type="Area2D" parent="." unique_id=2028978481]
+position = Vector2(1014, 828)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerMangiBaithak" unique_id=340399010]
+position = Vector2(-166.5, 119.5)
+shape = SubResource("RectangleShape2D_r0seb")
+
+[node name="Sprite2D" type="Sprite2D" parent="TriggerMangiBaithak" unique_id=920913981]
+position = Vector2(-166.00002, 121)
+scale = Vector2(1.4835978, 1.3336842)
+texture = SubResource("AtlasTexture_24k35")
