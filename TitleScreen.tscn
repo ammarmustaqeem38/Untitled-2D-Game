@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://db16pjg84y5f7"]
+
+[ext_resource type="Script" uid="uid://5clp5udiwka1" path="res://TitleScreen.cs" id="1_title"]
+[ext_resource type="Texture2D" uid="uid://dpj4brvqujusf" path="res://Spritos/titleScreen.svg" id="2_background"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prompt"]
+bg_color = Color(0.02, 0.02, 0.02, 0.72)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.72, 0.72, 0.72, 1)
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_title")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_background")
+stretch_mode = 5
+
+[node name="TitleStack" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -432.0
+offset_top = 42.0
+offset_right = -38.0
+offset_bottom = 380.0
+grow_horizontal = 0
+
+[node name="TitleText" type="Label" parent="TitleStack"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 196.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.76, 0.77, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.08, 0.08, 0.08, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 58
+text = "The Good,
+The Bad,
+The Vago"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="EnterPrompt" type="Panel" parent="TitleStack"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 260.0
+offset_right = 356.0
+offset_bottom = 334.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_prompt")
+
+[node name="EnterSymbol" type="Label" parent="TitleStack/EnterPrompt"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.82, 0.82, 0.8, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 42
+text = "↵"
+horizontal_alignment = 1
+vertical_alignment = 1
