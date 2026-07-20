@@ -1,12 +1,34 @@
 [gd_scene format=3 uid="uid://bb37t1yual61c"]
 
 [ext_resource type="Script" uid="uid://c8v53nu5h1qry" path="res://MangiBaithak.cs" id="1_scene"]
-[ext_resource type="Texture2D" uid="uid://evfftp238oxe" path="res://Spritos/SamiPick1.svg" id="2_background"]
+[ext_resource type="Texture2D" uid="uid://bwcw2cbmirmja" path="res://Spritos/MangiBathroomBaithak.jpeg" id="2_u784s"]
+
+[sub_resource type="Gradient" id="Gradient_hazy_backdrop"]
+offsets = PackedFloat32Array(0, 0.42, 0.72, 1)
+colors = PackedColorArray(0.985, 0.958, 0.89, 1, 1, 0.988, 0.95, 1, 0.945, 0.9, 0.82, 1, 1, 0.975, 0.93, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hazy_backdrop"]
+gradient = SubResource("Gradient_hazy_backdrop")
+width = 1920
+height = 1080
+fill_from = Vector2(0.08, 0)
+fill_to = Vector2(0.95, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dialogue"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.985, 0.92, 0.94, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.93, 0.78, 0.86, 0.95)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.42, 0.27, 0.34, 0.18)
+shadow_size = 10
 
-[node name="MangiBaithak" type="Control"]
+[node name="MangiBaithak" type="Control" unique_id=1608165197]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,49 +37,63 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_scene")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="HazyBackdrop" type="TextureRect" parent="." unique_id=1445874659]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_background")
-stretch_mode = 6
+texture = SubResource("GradientTexture2D_hazy_backdrop")
 
-[node name="DialoguePanel" type="Panel" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1291503730]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u784s")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DialoguePanel" type="Panel" parent="." unique_id=339641285]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -390.0
-offset_top = -176.0
-offset_right = 390.0
-offset_bottom = -42.0
+offset_left = -340.0
+offset_top = -166.0
+offset_right = 340.0
+offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dialogue")
 
-[node name="DialogueText" type="Label" parent="DialoguePanel"]
+[node name="DialogueText" type="Label" parent="DialoguePanel" unique_id=571796391]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 18.0
-offset_right = 756.0
+offset_right = 656.0
 offset_bottom = 58.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.29, 0.18, 0.27, 1)
+theme_override_colors/font_outline_color = Color(1, 0.97, 0.94, 0.7)
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 24
-text = "Amin:\"haan bc aagaya tu chars peenay\""
+text = "Amin: \"Haan bc\""
 autowrap_mode = 3
 
-[node name="ChoiceText" type="Label" parent="DialoguePanel"]
+[node name="ChoiceText" type="Label" parent="DialoguePanel" unique_id=1371127947]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 72.0
-offset_right = 756.0
+offset_right = 656.0
 offset_bottom = 118.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.54, 0.37, 0.48, 1)
+theme_override_colors/font_outline_color = Color(1, 0.97, 0.94, 0.65)
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 18
-text = "(x) normal response    (c) cunt response    (v) nothingburger"
+text = "x: next"
 autowrap_mode = 3

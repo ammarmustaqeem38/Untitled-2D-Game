@@ -54,8 +54,8 @@ scale = Vector2(0.33146068, 0.28318954)
 texture = ExtResource("3_lquwl")
 
 [node name="JointGrail" type="Sprite2D" parent="." unique_id=963885072]
-position = Vector2(12.999954, 314.00003)
-scale = Vector2(0.038, 0.03199996)
+position = Vector2(24.749979, 323.00003)
+scale = Vector2(0.0850001, 0.067999914)
 texture = ExtResource("3_5vw27")
 
 [node name="Bed" type="Sprite2D" parent="." unique_id=1646273311]

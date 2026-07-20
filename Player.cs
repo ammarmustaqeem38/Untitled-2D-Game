@@ -26,6 +26,11 @@ public partial class Player : CharacterBody2D
 		"Vago: Haan jaani bas aaya",
 	};
 
+	private static readonly string[] MachiIntSomaPhoneCallDialogue =
+	{
+		"Soma: \"Come amun's room bitch\"",
+	};
+
 	private const float StepDistance = 48f;
 	private const double FirstCallTimeoutSeconds = 6.0;
 	private const double CallRetryDelaySeconds = 2.0;
@@ -58,6 +63,7 @@ public partial class Player : CharacterBody2D
 	private bool phoneAutoAccepts;
 	private bool phoneRetriesOnDecline;
 	private bool firstPhoneCallStarted;
+	private bool machiIntSomaPhoneCallStarted;
 	private bool externalMovementLocked;
 	private bool wasXPressed;
 	private bool wasFPressed;
@@ -243,6 +249,21 @@ public partial class Player : CharacterBody2D
 			"Hilal",
 			HilalPhoneCallDialogue,
 			() => SetObjectiveAfterDelay("go clifton"),
+			autoAccept: true,
+			retryOnDecline: false);
+	}
+
+	public void StartMachiIntSomaPhoneCall()
+	{
+		if (machiIntSomaPhoneCallStarted)
+		{
+			return;
+		}
+
+		machiIntSomaPhoneCallStarted = true;
+		StartIncomingPhoneCall(
+			"Soma",
+			MachiIntSomaPhoneCallDialogue,
 			autoAccept: true,
 			retryOnDecline: false);
 	}
@@ -529,6 +550,11 @@ public partial class Player : CharacterBody2D
 		currentObjective = objective;
 		objectiveText.Text = currentObjective;
 		objectivePanel.Visible = !string.IsNullOrWhiteSpace(currentObjective);
+	}
+
+	public bool HasObjective(string objective)
+	{
+		return string.Equals(currentObjective, objective, StringComparison.Ordinal);
 	}
 
 	public void ClearObjective()

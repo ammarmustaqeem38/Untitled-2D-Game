@@ -174,6 +174,18 @@ b = Vector2(80, 1050)
 a = Vector2(80, 1050)
 b = Vector2(480, 1050)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_guestroom_blocker"]
+a = Vector2(480, 790)
+b = Vector2(480, 930)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kitchen_blocker"]
+a = Vector2(736, 688)
+b = Vector2(736, 800)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bathroom_blocker"]
+a = Vector2(736, 944)
+b = Vector2(736, 1040)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tv_wall"]
 size = Vector2(132, 94)
 
@@ -752,6 +764,15 @@ shape = SubResource("SegmentShape2D_038")
 
 [node name="CollisionShape2D039" type="CollisionShape2D" parent="WallCollisions" unique_id=380676498]
 shape = SubResource("SegmentShape2D_039")
+
+[node name="GuestRoomBlockedEntryCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=2098831830]
+shape = SubResource("SegmentShape2D_guestroom_blocker")
+
+[node name="KitchenBlockedEntryCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=1261736257]
+shape = SubResource("SegmentShape2D_kitchen_blocker")
+
+[node name="BathroomBlockedEntryCollision" type="CollisionShape2D" parent="WallCollisions" unique_id=1549464545]
+shape = SubResource("SegmentShape2D_bathroom_blocker")
 
 [node name="TVWallCollisionShape" type="CollisionShape2D" parent="WallCollisions" unique_id=1218340523]
 position = Vector2(386, 407)
