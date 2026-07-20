@@ -47,6 +47,7 @@ public partial class Player : CharacterBody2D
 	private Label dialogueText;
 	private Label dialogueFooter;
 	private AudioStreamPlayer ringtonePlayer;
+	private AudioStreamPlayer carriedAudioPlayer;
 	private AudioStreamGeneratorPlayback ringtonePlayback;
 	private string currentObjective = "";
 	private string pendingObjective = "";
@@ -486,6 +487,53 @@ public partial class Player : CharacterBody2D
 			VolumeDb = -10f,
 		};
 		AddChild(ringtonePlayer);
+	}
+
+	private void EnsureCarriedAudioPlayer()
+	{
+		if (carriedAudioPlayer != null)
+		{
+			return;
+		}
+
+		carriedAudioPlayer = new AudioStreamPlayer
+		{
+			Name = "CarriedAudioPlayer",
+		};
+		AddChild(carriedAudioPlayer);
+	}
+
+	public void CarrySceneAudio(AudioStreamPlayer2D sourcePlayer)
+	{
+		if (sourcePlayer?.Stream == null)
+		{
+			return;
+		}
+
+		EnsureCarriedAudioPlayer();
+		carriedAudioPlayer.Stream = sourcePlayer.Stream;
+		carriedAudioPlayer.Bus = sourcePlayer.Bus;
+		carriedAudioPlayer.VolumeDb = sourcePlayer.VolumeDb;
+		carriedAudioPlayer.PitchScale = sourcePlayer.PitchScale;
+		carriedAudioPlayer.Play(sourcePlayer.GetPlaybackPosition());
+	}
+
+	public void PlayOrResumeSceneAudio(AudioStreamPlayer2D scenePlayer)
+	{
+		if (scenePlayer?.Stream == null)
+		{
+			return;
+		}
+
+		if (carriedAudioPlayer != null && carriedAudioPlayer.Playing && carriedAudioPlayer.Stream == scenePlayer.Stream)
+		{
+			scenePlayer.Play(carriedAudioPlayer.GetPlaybackPosition());
+			carriedAudioPlayer.Stop();
+			carriedAudioPlayer.Stream = null;
+			return;
+		}
+
+		scenePlayer.Play();
 	}
 
 	private void StartRingtone()

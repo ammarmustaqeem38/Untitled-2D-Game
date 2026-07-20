@@ -9,16 +9,17 @@ public partial class AmunsRoom : Node2D
 	private Player player;
 	private Sprite2D zyn;
 	private Label zynPromptLabel;
+	private AudioStreamPlayer2D audioPlayer;
 	private bool wasEPressed;
 
 	public override void _Ready()
 	{
 		player = GetNode<Player>("/root/Player");
 		zyn = GetNodeOrNull<Sprite2D>("Props/Zyn");
-		var audioPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+		audioPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 		var mangiBaithakTrigger = GetNode<Area2D>("TriggerMangiBaithak");
 		mangiBaithakTrigger.BodyEntered += OnMangiBaithakTriggerBodyEntered;
-		audioPlayer.Play();
+		player.PlayOrResumeSceneAudio(audioPlayer);
 		player.MoveToRequestedSpawn(this, "Spawn");
 
 		if (zyn != null)
@@ -43,6 +44,7 @@ public partial class AmunsRoom : Node2D
 
 	private void GoToMangiBaithak()
 	{
+		player.CarrySceneAudio(audioPlayer);
 		GetTree().ChangeSceneToFile("res://MangiBaithak.tscn");
 	}
 
