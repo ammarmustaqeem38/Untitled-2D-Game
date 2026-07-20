@@ -20,6 +20,7 @@ public partial class Main : Node2D
 	public override void _Ready()
 	{
 		player = GetNode<Player>("/root/Player");
+		player.MoveToRequestedSpawn(this);
 		jointGrail = GetNode<Node2D>("JointGrail");
 		player.MoveStepTaken += OnPlayerMoveStepTaken;
 		CreateJointPromptUi();

@@ -20,11 +20,10 @@ public partial class MachiInt : Node2D
 	public override void _Ready()
 	{
 		var player = GetNode<Player>("/root/Player");
-		var spawn = GetNode<Marker2D>("Spawn");
 		var audioPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
 		tvLightStrobe = GetNode<Polygon2D>("Lighting/TVLightStrobe");
 		audioPlayer.Play();
-		player.GlobalPosition = spawn.GlobalPosition;
+		player.MoveToRequestedSpawn(this, "Spawn");
 		player.StartMachiIntSomaPhoneCall();
 		UpdateTvLightStrobe();
 	}

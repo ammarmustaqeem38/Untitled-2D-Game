@@ -265,6 +265,9 @@ position = Vector2(320, 572)
 [node name="RightBedroomEntrance" type="Marker2D" parent="EntranceMarkers" unique_id=1789761086]
 position = Vector2(1216, 464)
 
+[node name="AmunReturnSpawn" type="Marker2D" parent="EntranceMarkers" unique_id=1493425381]
+position = Vector2(1005, 552)
+
 [node name="BalconyEntrance" type="Marker2D" parent="EntranceMarkers" unique_id=104571831]
 position = Vector2(800, 288)
 

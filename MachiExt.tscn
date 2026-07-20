@@ -30,6 +30,9 @@ script = ExtResource("1_dgnc7")
 position = Vector2(35, 475)
 gizmo_extents = 0.0
 
+[node name="MachiIntEntrance" type="Marker2D" parent="."]
+position = Vector2(760, 500)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1606123525]
 stream = SubResource("AudioStreamMP3_flbf7")
 

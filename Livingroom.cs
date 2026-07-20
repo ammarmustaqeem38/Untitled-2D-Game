@@ -31,7 +31,6 @@ public partial class Livingroom : Node2D
 	public override void _Ready()
 	{
 		player = GetNode<Player>("/root/Player");
-		var spawn = GetNode<Marker2D>("Spawn");
 		var audioPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 		audioPlayer.Play();
 		
@@ -39,7 +38,7 @@ public partial class Livingroom : Node2D
 		sprite.Play("overhead_press"); // Use your animation name
 		ashfaq = sprite;
 		
-		player.GlobalPosition = spawn.GlobalPosition;
+		player.MoveToRequestedSpawn(this, "Spawn");
 		CreatePromptUi();
 	}
 

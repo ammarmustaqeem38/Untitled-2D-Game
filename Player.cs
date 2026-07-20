@@ -50,6 +50,7 @@ public partial class Player : CharacterBody2D
 	private AudioStreamGeneratorPlayback ringtonePlayback;
 	private string currentObjective = "";
 	private string pendingObjective = "";
+	private string requestedSpawnMarkerPath = "";
 	private string incomingCaller = "";
 	private string lastScenePath = "";
 	private string[] activeDialogue = Array.Empty<string>();
@@ -555,6 +556,37 @@ public partial class Player : CharacterBody2D
 	public bool HasObjective(string objective)
 	{
 		return string.Equals(currentObjective, objective, StringComparison.Ordinal);
+	}
+
+	public void RequestSceneSpawn(string markerPath)
+	{
+		requestedSpawnMarkerPath = markerPath;
+	}
+
+	public void MoveToRequestedSpawn(Node sceneRoot, string defaultMarkerPath = "")
+	{
+		var markerPath = string.IsNullOrWhiteSpace(requestedSpawnMarkerPath)
+			? defaultMarkerPath
+			: requestedSpawnMarkerPath;
+
+		requestedSpawnMarkerPath = "";
+
+		if (string.IsNullOrWhiteSpace(markerPath))
+		{
+			return;
+		}
+
+		var marker = sceneRoot.GetNodeOrNull<Marker2D>(markerPath);
+
+		if (marker == null && !string.IsNullOrWhiteSpace(defaultMarkerPath))
+		{
+			marker = sceneRoot.GetNodeOrNull<Marker2D>(defaultMarkerPath);
+		}
+
+		if (marker != null)
+		{
+			GlobalPosition = marker.GlobalPosition;
+		}
 	}
 
 	public void ClearObjective()

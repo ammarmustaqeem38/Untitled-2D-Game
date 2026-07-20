@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://l5fjv6oslrsr" path="res://Spritos/MachiInt_sofas.png" id="8_agrjh"]
 [ext_resource type="Texture2D" uid="uid://drq7mdf2jwdfi" path="res://Spritos/AmunsRoom_Shower.png" id="9_dygv6"]
 [ext_resource type="AudioStream" uid="uid://bvqohs5xuskwf" path="res://Audio/AmunsRoom-BesameLisaOno.mp3" id="9_paw55"]
+[ext_resource type="Texture2D" uid="uid://dxm7c3p2vgwro" path="res://Spritos/zyn.png" id="10_1tict"]
 [ext_resource type="Texture2D" uid="uid://8nn2mgufwhbk" path="res://Spritos/blip.png" id="11_dygv6"]
+[ext_resource type="Script" uid="uid://wqhfldqtprgx" path="res://Entrance.cs" id="12_entry"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrwbp"]
 atlas = ExtResource("6_agrjh")
@@ -23,6 +25,9 @@ region = Rect2(230.3049, 0, 72.15082, 177.34744)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jmf70"]
 atlas = ExtResource("6_agrjh")
 region = Rect2(228.54544, 228.27272, 72.727264, 91.81819)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_entry_door_exit"]
+size = Vector2(82, 112)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_top"]
 a = Vector2(96, 96)
@@ -205,6 +210,18 @@ texture = ExtResource("9_dygv6")
 position = Vector2(1084, 783)
 scale = Vector2(1.0347216, 0.72802216)
 texture = SubResource("AtlasTexture_jmf70")
+
+[node name="Zyn" type="Sprite2D" parent="Props" unique_id=750967864]
+position = Vector2(738, 174.00002)
+scale = Vector2(0.06770811, 0.062500045)
+texture = ExtResource("10_1tict")
+
+[node name="EntryDoorExit" type="Area2D" parent="." unique_id=666040543]
+position = Vector2(106, 665)
+script = ExtResource("12_entry")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntryDoorExit" unique_id=111699361]
+shape = SubResource("RectangleShape2D_entry_door_exit")
 
 [node name="WallLines" type="Node2D" parent="." unique_id=1100398132]
 

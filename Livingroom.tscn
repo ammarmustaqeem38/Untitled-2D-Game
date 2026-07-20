@@ -19,7 +19,7 @@ b = Vector2(-74, 1)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jrwbp"]
 a = Vector2(-9, -260)
-b = Vector2(-4, -34)
+b = Vector2(-11, 86)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jmf70"]
 a = Vector2(-20, 6)

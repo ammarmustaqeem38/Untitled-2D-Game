@@ -3,6 +3,8 @@ using Godot;
 public partial class GoToMachi : Area2D
 {
 	private const string RequiredObjective = "go clifton";
+	private const string MachiIntScenePath = "res://MachiInt.tscn";
+	private const string MachiExtMachiIntEntranceSpawn = "MachiIntEntrance";
 
 	public override void _Ready()
 	{
@@ -18,6 +20,11 @@ public partial class GoToMachi : Area2D
 	{
 		if (body is Player player && player.HasObjective(RequiredObjective))
 		{
+			if (GetTree().CurrentScene?.SceneFilePath == MachiIntScenePath)
+			{
+				player.RequestSceneSpawn(MachiExtMachiIntEntranceSpawn);
+			}
+
 			CallDeferred(nameof(ChangeRoom));
 		}
 	}
