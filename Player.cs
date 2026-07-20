@@ -28,7 +28,7 @@ public partial class Player : CharacterBody2D
 
 	private static readonly string[] MachiIntSomaPhoneCallDialogue =
 	{
-		"Soma: \"Come amun's room bitch\"",
+		"Soma: \"Come amin's room bitch\"",
 	};
 
 	private const float StepDistance = 48f;

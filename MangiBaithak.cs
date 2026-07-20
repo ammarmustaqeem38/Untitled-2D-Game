@@ -11,6 +11,7 @@ public partial class MangiBaithak : Control
 	}
 
 	private const string ChoicePrompt = "(x) normal response    (c) cunt response    (v) nothingburger";
+	private const string AmunsRoomBathroomDoorSpawn = "MangiBaithakReturnSpawn";
 
 	private Player player;
 	private Label dialogueText;
@@ -99,6 +100,7 @@ public partial class MangiBaithak : Control
 		if (dialogueState == DialogueState.ShowingNpcResponse)
 		{
 			isReturning = true;
+			player.RequestSceneSpawn(AmunsRoomBathroomDoorSpawn);
 			GetTree().ChangeSceneToFile("res://AmunsRoom.tscn");
 		}
 	}

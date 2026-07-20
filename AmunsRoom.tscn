@@ -99,6 +99,9 @@ polygon = PackedVector2Array(760, 768, 1010, 768, 1010, 984, 760, 984)
 [node name="Spawn" type="Marker2D" parent="." unique_id=1899869202]
 position = Vector2(155, 665)
 
+[node name="MangiBaithakReturnSpawn" type="Marker2D" parent="."]
+position = Vector2(930, 660)
+
 [node name="Lighting" type="Node2D" parent="." unique_id=1441974127]
 z_index = -10
 
