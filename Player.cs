@@ -37,6 +37,8 @@ public partial class Player : CharacterBody2D
 	private const double AutoAcceptDelaySeconds = 1.25;
 	private const double ObjectiveDelaySeconds = 0.5;
 	private const double RingtoneMixRate = 44100.0;
+	private const double ZynGlowDurationSeconds = 1.5;
+	private const double ZynGlowStrobeIntervalSeconds = 0.045;
 
 	private AnimatedSprite2D anim;
 	private Camera2D camera;
@@ -76,6 +78,10 @@ public partial class Player : CharacterBody2D
 	private double pendingObjectiveDelay = -1.0;
 	private double ringtoneSampleTime;
 	private double ringtonePhase;
+	private double zynGlowRemaining;
+	private double zynGlowTime;
+	private Color zynGlowBaseModulate = Colors.White;
+	private bool isZynGlowActive;
 
 	public override void _Ready()
 	{
@@ -98,6 +104,7 @@ public partial class Player : CharacterBody2D
 		UpdatePhoneCall(delta);
 		UpdateDialogueInput();
 		UpdateDelayedObjective(delta);
+		UpdateZynGlow(delta);
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -210,6 +217,19 @@ public partial class Player : CharacterBody2D
 			Velocity = Vector2.Zero;
 			anim.Stop();
 		}
+	}
+
+	public void StartZynGlow()
+	{
+		if (!isZynGlowActive)
+		{
+			zynGlowBaseModulate = anim.Modulate;
+		}
+
+		isZynGlowActive = true;
+		zynGlowRemaining = ZynGlowDurationSeconds;
+		zynGlowTime = 0.0;
+		UpdateZynGlowFrame(isGreenFrame: true);
 	}
 
 	public void StartDialogue(string[] lines, Action onCompleted = null, bool lockMovement = false)
@@ -422,6 +442,32 @@ public partial class Player : CharacterBody2D
 			pendingObjective = "";
 			pendingObjectiveDelay = -1.0;
 		}
+	}
+
+	private void UpdateZynGlow(double delta)
+	{
+		if (!isZynGlowActive)
+		{
+			return;
+		}
+
+		zynGlowRemaining -= delta;
+		zynGlowTime += delta;
+
+		if (zynGlowRemaining <= 0.0)
+		{
+			isZynGlowActive = false;
+			anim.Modulate = zynGlowBaseModulate;
+			return;
+		}
+
+		var isGreenFrame = ((int)(zynGlowTime / ZynGlowStrobeIntervalSeconds) % 2) == 0;
+		UpdateZynGlowFrame(isGreenFrame);
+	}
+
+	private void UpdateZynGlowFrame(bool isGreenFrame)
+	{
+		anim.Modulate = isGreenFrame ? new Color(0.12f, 1f, 0.2f, 1f) : zynGlowBaseModulate;
 	}
 
 	private void CreateDialogueUi()

@@ -86,6 +86,7 @@ public partial class AmunsRoom : Node2D
 			zynCollected = true;
 			zyn.Visible = false;
 			zynPromptLabel.Visible = false;
+			player.StartZynGlow();
 		}
 
 		wasEPressed = ePressed;

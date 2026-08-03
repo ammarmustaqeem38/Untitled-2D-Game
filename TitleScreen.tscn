@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://5clp5udiwka1" path="res://TitleScreen.cs" id="1_title"]
 [ext_resource type="Texture2D" uid="uid://dpj4brvqujusf" path="res://Spritos/titleScreen.svg" id="2_background"]
+[ext_resource type="FontFile" path="res://fonts/connection_ii/ConnectionII.tres" id="3_1xr1c"]
+[ext_resource type="AudioStream" uid="uid://cnbq7rwrny11q" path="res://Audio/titlescreenmusic.mp3" id="4_music"]
+[ext_resource type="AudioStream" uid="uid://of7keka4ybk6" path="res://Audio/titlescreenenter.mp3" id="5_enter"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prompt"]
 bg_color = Color(0.02, 0.02, 0.02, 0.72)
@@ -11,7 +14,7 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.72, 0.72, 0.72, 1)
 
-[node name="TitleScreen" type="Control"]
+[node name="TitleScreen" type="Control" unique_id=879655170]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,17 +23,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_title")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=2107636590]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -207.5
+offset_right = -351.0
+offset_bottom = 207.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_background")
 stretch_mode = 5
 
-[node name="TitleStack" type="Control" parent="."]
+[node name="TitleStack" type="Control" parent="." unique_id=1189987436]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -41,16 +47,20 @@ offset_right = -38.0
 offset_bottom = 380.0
 grow_horizontal = 0
 
-[node name="TitleText" type="Label" parent="TitleStack"]
+[node name="TitleText" type="Label" parent="TitleStack" unique_id=1609231484]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 196.0
+offset_left = -162.0
+offset_top = -61.0
+offset_right = 6.0
+offset_bottom = 438.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.76, 0.77, 0.75, 1)
 theme_override_colors/font_outline_color = Color(0.08, 0.08, 0.08, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 58
+theme_override_fonts/font = ExtResource("3_1xr1c")
+theme_override_font_sizes/font_size = 99
 text = "The Good,
 The Bad,
 The Vago"
@@ -58,19 +68,23 @@ horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="EnterPrompt" type="Panel" parent="TitleStack"]
+[node name="EnterPrompt" type="Panel" parent="TitleStack" unique_id=1212590129]
 layout_mode = 0
-offset_left = 238.0
-offset_top = 260.0
-offset_right = 356.0
-offset_bottom = 334.0
+offset_left = 127.0
+offset_top = 454.0
+offset_right = 245.0
+offset_bottom = 528.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_prompt")
 
-[node name="EnterSymbol" type="Label" parent="TitleStack/EnterPrompt"]
+[node name="EnterSymbol" type="Label" parent="TitleStack/EnterPrompt" unique_id=1834358956]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -7.0
+offset_right = 1.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.82, 0.82, 0.8, 1)
@@ -80,3 +94,19 @@ theme_override_font_sizes/font_size = 42
 text = "↵"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TitleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_music")
+
+[node name="EnterSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_enter")
+
+[node name="FadeOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
