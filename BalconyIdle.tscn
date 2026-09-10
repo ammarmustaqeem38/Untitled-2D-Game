@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://2nw0fsci6dlt"]
 
-[ext_resource type="Script" uid="uid://bx5acc1f6m2ty" path="res://BalconyIdle.cs" id="1_2d83j"]
+[ext_resource type="Script" path="res://BalconyIdle.gd" id="1_2d83j"]
 [ext_resource type="AudioStream" uid="uid://m430wrtwv5d1" path="res://Audio/TheBalcony.mp3" id="2_feac4"]
 
 [node name="BalconyIdle" type="Node2D" unique_id=1525808124]

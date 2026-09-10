@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bb37t1yual61c"]
 
-[ext_resource type="Script" uid="uid://c8v53nu5h1qry" path="res://MangiBaithak.cs" id="1_scene"]
+[ext_resource type="Script" path="res://MangiBaithak.gd" id="1_scene"]
 [ext_resource type="Texture2D" uid="uid://bwcw2cbmirmja" path="res://Spritos/MangiBathroomBaithak.jpeg" id="2_u784s"]
 
 [sub_resource type="Gradient" id="Gradient_hazy_backdrop"]

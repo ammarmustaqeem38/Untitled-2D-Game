@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://db16pjg84y5f7"]
 
-[ext_resource type="Script" uid="uid://5clp5udiwka1" path="res://TitleScreen.cs" id="1_title"]
+[ext_resource type="Script" path="res://TitleScreen.gd" id="1_title"]
 [ext_resource type="Texture2D" uid="uid://dpj4brvqujusf" path="res://Spritos/titleScreen.svg" id="2_background"]
 [ext_resource type="FontFile" path="res://fonts/connection_ii/ConnectionII.tres" id="3_1xr1c"]
 [ext_resource type="AudioStream" uid="uid://cnbq7rwrny11q" path="res://Audio/titlescreenmusic.mp3" id="4_music"]

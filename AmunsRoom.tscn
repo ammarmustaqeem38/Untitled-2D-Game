@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cdhn836nv6oek"]
 
-[ext_resource type="Script" uid="uid://dfmyrygr663e7" path="res://AmunsRoom.cs" id="1_room"]
+[ext_resource type="Script" path="res://AmunsRoom.gd" id="1_room"]
 [ext_resource type="Texture2D" uid="uid://dkuomic11lrfl" path="res://Spritos/BedroomDoor.png" id="2_door"]
 [ext_resource type="Texture2D" uid="uid://d34ndmj0oagmm" path="res://Spritos/AminBed1.png" id="3_ghe7c"]
 [ext_resource type="Texture2D" uid="uid://2vm1ry8tve8i" path="res://Spritos/BthroomDoorIso.png" id="4_bathdoor"]
@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bvqohs5xuskwf" path="res://Audio/AmunsRoom-BesameLisaOno.mp3" id="9_paw55"]
 [ext_resource type="Texture2D" uid="uid://dxm7c3p2vgwro" path="res://Spritos/zyn.png" id="10_1tict"]
 [ext_resource type="Texture2D" uid="uid://8nn2mgufwhbk" path="res://Spritos/blip.png" id="11_dygv6"]
-[ext_resource type="Script" uid="uid://wqhfldqtprgx" path="res://Entrance.cs" id="12_entry"]
+[ext_resource type="Script" path="res://Entrance.gd" id="12_entry"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrwbp"]
 atlas = ExtResource("6_agrjh")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckudr8chj1kgo"]
 
-[ext_resource type="Script" uid="uid://c1yh3u8s3mux" path="res://Player.cs" id="1_kpjcp"]
+[ext_resource type="Script" path="res://Player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://c50m7g30qikhd" path="res://Spritos/Vago_anim.png" id="2_kpjcp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]

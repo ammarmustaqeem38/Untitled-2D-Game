@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dg7kffa0x5r4n"]
 
-[ext_resource type="Script" uid="uid://qi0i6pep7v6p" path="res://MachiInt.cs" id="1_lweql"]
+[ext_resource type="Script" path="res://MachiInt.gd" id="1_lweql"]
 [ext_resource type="Texture2D" uid="uid://dkuomic11lrfl" path="res://Spritos/BedroomDoor.png" id="2_42up2"]
-[ext_resource type="Script" uid="uid://clcnomlsjw5fh" path="res://GoToMachi.cs" id="2_jq2fj"]
+[ext_resource type="Script" path="res://GoToMachi.gd" id="2_jq2fj"]
 [ext_resource type="Texture2D" uid="uid://2vm1ry8tve8i" path="res://Spritos/BthroomDoorIso.png" id="3_bath"]
 [ext_resource type="Texture2D" uid="uid://bs2h0crjsvqs5" path="res://Spritos/MachiInt_Kitchen.png" id="5_nnbag"]
 [ext_resource type="Texture2D" uid="uid://l5fjv6oslrsr" path="res://Spritos/MachiInt_sofas.png" id="6_sofas"]
 [ext_resource type="Texture2D" uid="uid://bgcqgemrn0ncl" path="res://Spritos/MachiInt_CommonBathroomSink.png" id="7_sink"]
 [ext_resource type="Texture2D" uid="uid://byjjcde6uv3fh" path="res://Spritos/MachiInt_CommonBathroomToilet.png" id="8_toilet"]
-[ext_resource type="Script" uid="uid://di0tq6a87fqjp" path="res://GoToAmun.cs" id="9_c8s6a"]
+[ext_resource type="Script" path="res://GoToAmun.gd" id="9_c8s6a"]
 [ext_resource type="AudioStream" uid="uid://b4ybdt7j6m1fw" path="res://Audio/MachiInt_WGUpAndAtIt.mp3" id="10_nhqgg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nnbag"]
