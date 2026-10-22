@@ -2,10 +2,12 @@
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
   X-Content-Type-Options: nosniff
-  Cache-Control: public, max-age=0, must-revalidate
 
-/game/*.wasm
-  Content-Type: application/wasm
-
-/game/*.pck
+# Only content-hashed files receive immutable caching. HTML and stable runtime
+# filenames keep Netlify's default revalidation to avoid mixing releases.
+/game/assets/*
   Content-Type: application/octet-stream
+  Cache-Control: public, max-age=31536000, immutable
+
+/game/asset-loader.*.js
+  Cache-Control: public, max-age=31536000, immutable

@@ -3,6 +3,7 @@ import { cpSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writ
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { validateWebBuild } from "./check-web-build.mjs";
+import { packageWebAssets } from "./package-web-assets.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const version = readFileSync(path.join(root, "scripts/godot-version.txt"), "utf8").trim();
@@ -49,11 +50,21 @@ try {
   }
   const projectFile = path.join(source, "project.godot");
   writeFileSync(projectFile, readFileSync(projectFile, "utf8").replace(/, "C#"/g, ""));
+  // Scene changes use string paths, so include every scene and its dependencies.
+  const scenes = readdirSync(source, { recursive: true })
+    .filter((file) => file.endsWith(".tscn"))
+    .map((file) => `"res://${file.replaceAll(path.sep, "/")}"`)
+    .sort();
+  const presetsFile = path.join(source, "export_presets.cfg");
+  writeFileSync(presetsFile, readFileSync(presetsFile, "utf8")
+    .replace(/^export_files=.*$/m, `export_files=PackedStringArray(${scenes.join(", ")})`));
   mkdirSync(output, { recursive: true });
   run(["--headless", "--path", source, "--editor", "--import"]);
   run(["--headless", "--path", source, "--export-release", "Web", path.join(output, "index.html")]);
   validateWebBuild(output);
   run(["--headless", "--main-pack", path.join(output, "index.pck"), "--log-file", path.join(work, "smoke.log"), "--script", path.join(root, "tests/web-smoke.gd")]);
+  packageWebAssets(output);
+  validateWebBuild(output);
 
   // Only replace the generated game after a successful export and validation.
   if (path.relative(root, publishGame) !== path.join("docs", "game")) throw new Error("Invalid publish path");

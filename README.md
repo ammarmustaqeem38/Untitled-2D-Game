@@ -71,7 +71,9 @@ node scripts/serve-web.mjs
 
 Open `http://localhost:8000`. The preview server sends the same cross-origin isolation headers as Netlify. These are required for the threaded export that preserves procedural ringtone generation, positional audio, and music continuity. A plain file URL or a server without these headers cannot run this build.
 
-The exporter builds in an isolated directory under `.cache/`, excludes unused .NET sources and website tooling from the game pack, and only replaces `docs/game/` after export validation and gameplay smoke checks pass. The checks load the exported pack and cover all rooms, movement, phone calls, objectives, dialogue choices, and audio continuity. Generated files are ignored by Git. The original game scripts, assets, and desktop project remain available.
+The exporter builds in an isolated directory under `.cache/`, includes every scene and its dependencies, and only replaces `docs/game/` after export validation and gameplay smoke checks pass. The checks load the exported pack and cover all rooms, movement, phone calls, objectives, dialogue choices, and audio continuity. Unused resources, .NET sources, tests, and website tooling are excluded from the game pack. The original game scripts, assets, and desktop project remain available.
+
+The browser build uses lossless gzip compression for the engine and content-hashed download parts under 900 KB, with immutable caching for repeat visits. The browser loader reconstructs Godot's binaries without changing audio or image quality. The raw `.wasm` and `.pck` are not duplicated in the upload folder. Always deploy the whole generated `docs` folder. Run `node --test tests/web-assets.test.mjs` to check the transport's byte accuracy and failure handling.
 
 See [deployment instructions](docs/DEPLOYMENT.md) for manual uploads and troubleshooting.
 

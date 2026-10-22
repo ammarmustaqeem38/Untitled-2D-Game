@@ -18,6 +18,9 @@ createServer((request, response) => {
       return;
     }
     const url = new URL(request.url, "http://localhost");
+    if (/^\/game\/(assets\/[a-f0-9]{64}\.bin|asset-loader\.[a-f0-9]{16}\.js)$/.test(url.pathname)) {
+      response.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+    }
     let file = path.resolve(root, `.${decodeURIComponent(url.pathname)}`);
     const relative = path.relative(root, file);
     if (relative.startsWith("..") || path.isAbsolute(relative)) {
