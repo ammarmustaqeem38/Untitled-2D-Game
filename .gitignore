@@ -10,3 +10,9 @@ obj/
 # OS
 .DS_Store
 Thumbs.db
+
+# Generated web exports and build tools
+.cache/
+.netlify/
+node_modules/
+docs/game/

@@ -17,7 +17,11 @@ config/icon="res://Spritos/icon.svg"
 
 [autoload]
 
-Player="*uid://ckudr8chj1kgo"
+Player="*res://Player.tscn"
+
+[audio]
+
+general/default_playback_type.web=0
 
 [display]
 

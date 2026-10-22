@@ -16,7 +16,7 @@
       <nav class="top-nav" aria-label="Site navigation">
         <a href="#play">Play</a>
         <a href="#reviews">Reviews</a>
-        <a href="#setup">Host</a>
+        <a href="#controls">Controls</a>
       </nav>
     </div>
   </header>
@@ -42,11 +42,11 @@
               title="The Good, The Bad, The Vago game"
               data-src="game/index.html"
               allow="autoplay; fullscreen; gamepad"
-              tabindex="-1"></iframe>
+              tabindex="0"></iframe>
 
             <div class="screen-overlay" id="screenOverlay">
               <h2>Play The Vago</h2>
-              <p id="gameStatus">Place a web export at <code>docs/game/index.html</code>, then press play.</p>
+              <p id="gameStatus" role="status" aria-live="polite">Press Play, then Enter to begin. Use a keyboard to play.</p>
               <button class="play-button" id="playButton" type="button">Play</button>
             </div>
           </div>
@@ -70,7 +70,7 @@
             </div>
             <div>
               <dt>Status</dt>
-              <dd>Browser shell ready</dd>
+              <dd>Browser game</dd>
             </div>
           </dl>
         </aside>
@@ -109,15 +109,18 @@
       </div>
     </section>
 
-    <section class="setup-section" id="setup" aria-labelledby="setup-title">
+    <section class="setup-section" id="controls" aria-labelledby="setup-title">
       <div class="section-title">
-        <h2 id="setup-title">Publish This Site</h2>
+        <h2 id="setup-title">Controls</h2>
       </div>
       <div class="setup-card">
         <p>
-          This page is static and ready for GitHub Pages from the <code>docs/</code> folder.
-          The player loads a browser-compatible build from <code>docs/game/index.html</code>.
+          <strong>Enter</strong> to start &middot; <strong>Arrow keys</strong> to move &middot;
+          <strong>E</strong> to interact &middot; <strong>X</strong> to advance dialogue &middot;
+          <strong>F</strong> to answer a call &middot; <strong>H</strong> to hang up &middot;
+          <strong>X / C / V</strong> to choose a response.
         </p>
+        <p><a href="game/index.html" target="_blank" rel="noopener">Open the game in a full window</a></p>
       </div>
     </section>
   </main>
